@@ -1,0 +1,17 @@
+resources:
+    App\Entity\DemoEntity:
+        shortName: demo-entities
+        collectionOperations:
+            get: ~
+            post:
+                output: false
+        itemOperations:
+            get: ~
+            delete: ~
+        properties:
+            id:
+                identifier: true
+            public:
+                attributes:
+                    serialization_context:
+                        serialized_name: isPublic

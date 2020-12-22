@@ -1,0 +1,18 @@
+api_platform:
+    name_converter: 'Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter'
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/Resources/config/api-platform'
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
+    collection:
+        pagination:
+            client_items_per_page: true
+            items_per_page_parameter_name: limit
+            maximum_items_per_page: 100
