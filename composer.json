@@ -12,6 +12,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.7",
         "flying-narwhal/json-request-bundle": "^3.1",
+        "league/tactician-bundle": "^1.2",
         "nelmio/cors-bundle": "^2.1",
         "ramsey/uuid": "^4.1",
         "sentry/sentry-symfony": "^3.5",
