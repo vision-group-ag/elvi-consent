@@ -28,7 +28,7 @@ tests:
         - time composer install --prefer-dist --no-interaction --optimize-autoloader
         - rm -rf $ELVI_CONFIG_REPOSITORY_DIR
         - time git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/elvilibrary/config-repository.git $ELVI_CONFIG_REPOSITORY_DIR;
-        - time bin/ecs check src
+        - time bin/ecs check
         - time bin/phpunit
         - time bin/phpspec run
         - time bin/codecept build

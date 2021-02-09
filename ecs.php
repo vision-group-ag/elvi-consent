@@ -15,5 +15,7 @@ return static function (ContainerConfigurator $containerConfigurator): void
         SetList::PHP_71,
     ]);
 
+    $parameters->set(Option::PATHS, ['src/']);
+
     $parameters->set(Option::CACHE_DIRECTORY, './var/cache/ecs/');
 };
