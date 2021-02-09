@@ -48,6 +48,7 @@ class RoboFile extends \Robo\Tasks
             __DIR__ . '/config/validator/DemoEntity.yaml',
             __DIR__ . '/tests/acceptance/features/demo.feature',
             __DIR__ . '/tests/api/DemoCest.php',
+            __DIR__ . '/tests/Spec/Entity/DemoEntitySpec.php',
         ]);
         $this->say("Removed demo files");
 
