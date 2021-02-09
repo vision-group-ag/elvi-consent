@@ -38,6 +38,7 @@
         "codeception/module-rest": "^1.2",
         "codeception/module-symfony": "^1.1",
         "consolidation/robo": "^2.2",
+        "friends-of-phpspec/phpspec-code-coverage": "^6.0",
         "phpspec/phpspec": "^7.0",
         "roave/security-advisories": "dev-latest",
         "softcreatr/jsonpath": "^0.7.0",
