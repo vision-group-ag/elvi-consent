@@ -29,6 +29,7 @@ tests:
         - rm -rf $ELVI_CONFIG_REPOSITORY_DIR
         - time git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/elvilibrary/config-repository.git $ELVI_CONFIG_REPOSITORY_DIR;
         - time bin/ecs check
+        - time bin/psalm
         - time bin/phpunit
         - time bin/phpspec run
         - time bin/codecept build

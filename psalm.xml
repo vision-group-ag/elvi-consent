@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="4"
+    phpVersion="7.4"
+    cacheDirectory="var/cache/psalm"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    allowPhpStormGenerics="true"
+    errorBaseline="psalm-baseline.xml"
+>
+    <projectFiles>
+        <directory name="src/" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <fileExtensions>
+        <extension name=".php" />
+    </fileExtensions>
+
+    <issueHandlers>
+        <TooManyArguments>
+            <errorLevel type="suppress">
+                <referencedFunction name="Doctrine\Common\Collections\ExpressionBuilder::orX" />
+                <referencedFunction name="Doctrine\Common\Collections\ExpressionBuilder::andX" />
+                <referencedFunction name="Doctrine\ORM\Query\Expr::orX" />
+                <referencedFunction name="Doctrine\ORM\Query\Expr::andX" />
+                <referencedFunction name="Doctrine\Persistence\ObjectManager::flush" />
+            </errorLevel>
+        </TooManyArguments>
+        <UndefinedInterfaceMethod>
+            <errorLevel type="suppress">
+                <referencedMethod name="DateTimeInterface::modify"/>
+                <referencedMethod name="DateTimeInterface::setTimezone"/>
+            </errorLevel>
+        </UndefinedInterfaceMethod>
+        <InvalidArgument>
+            <errorLevel type="suppress">
+                <referencedFunction name="Doctrine\Common\Collections\ArrayCollection::add"/>
+                <referencedFunction name="Doctrine\Common\Collections\ArrayCollection::contains"/>
+            </errorLevel>
+        </InvalidArgument>
+        <InvalidDocblock>
+            <errorLevel type="suppress">
+                <file name="vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php" />
+            </errorLevel>
+        </InvalidDocblock>
+    </issueHandlers>
+</psalm>

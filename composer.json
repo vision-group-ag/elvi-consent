@@ -42,7 +42,8 @@
         "phpspec/phpspec": "^7.0",
         "roave/security-advisories": "dev-latest",
         "softcreatr/jsonpath": "^0.7.0",
-        "symplify/easy-coding-standard": "^9.0.14"
+        "symplify/easy-coding-standard": "^9.0.14",
+        "vimeo/psalm": "^4.6"
     },
     "repositories": [
         {
