@@ -13,4 +13,5 @@ return [
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Auth0\JWTAuthBundle\JWTAuthBundle::class => ['all' => true],
     Elvi\AuthBundle\ElviAuthBundle::class => ['all' => true],
+    Elvi\ApiLogBundle\ElviApiLogBundle::class => ['all' => true],
 ];
