@@ -71,7 +71,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "AppTests\\": "tests/"
+            "AppTests\\": "tests/",
+            "Spec\\App\\": "tests/Spec/"
         }
     },
     "replace": {
