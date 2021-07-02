@@ -1,21 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
+use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function (ContainerConfigurator $containerConfigurator): void
-{
+return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::SETS, [
-        SetList::PSR_12,
-        SetList::CLEAN_CODE,
-        SetList::STRICT,
-        SetList::PHP_70,
-        SetList::PHP_71,
+    $parameters->set(Option::PATHS, [
+        __DIR__ . '/src',
     ]);
 
-    $parameters->set(Option::PATHS, ['src/']);
+    $services = $containerConfigurator->services();
+    $services->set(ArraySyntaxFixer::class)
+        ->call('configure', [[
+            'syntax' => 'short',
+        ]]);
 
-    $parameters->set(Option::CACHE_DIRECTORY, './var/cache/ecs/');
+    // run and fix, one by one
+    $containerConfigurator->import(SetList::STRICT);
+    $containerConfigurator->import(SetList::CLEAN_CODE);
+    $containerConfigurator->import(SetList::PSR_12);
 };
