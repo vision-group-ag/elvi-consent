@@ -10,7 +10,7 @@ class DemoEntity
     private string $name;
     private bool $isPublic;
 
-    public function __construct(string $id, string $name, $isPublic = false)
+    public function __construct(string $id, string $name, bool $isPublic = false)
     {
         $this->id = $id;
         $this->name = $name;

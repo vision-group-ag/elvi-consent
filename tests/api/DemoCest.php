@@ -10,7 +10,7 @@ class DemoCest
     public function passDemoTest(ApiTester $I): void
     {
         $I->amGoingTo("Check if API Docs is accessible");
-        $I->sendGET('/api/docs');
+        $I->sendGET('/docs');
         $I->seeResponseCodeIsSuccessful();
     }
 }

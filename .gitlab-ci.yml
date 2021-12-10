@@ -22,7 +22,7 @@ tests:
         DOCKER_AUTH_CONFIG: '{"auths":{"registry.gitlab.com":{"auth": "Z2l0bGFiK2RlcGxveS10b2tlbi05MDExOTp1TXZ2Q3h6N3phQUxNVFA4UXdkUg=="}}'
         ELVI_CONFIG_REPOSITORY_DIR: /builds/elviapp/elvi-account/deps/config-repository
     services:
-        - name: mariadb:10.5.8
+        - name: mariadb:10.6.5
           alias: db
     script:
         - time php8.0 /bin/composer install --prefer-dist --no-interaction --optimize-autoloader
