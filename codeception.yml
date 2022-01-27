@@ -11,3 +11,11 @@ extensions:
         - Codeception\Extension\RunFailed
 params:
     - .env
+coverage:
+    enabled: true
+    remote: true
+    remote_config: codeception.yml
+    include:
+        - src/*
+    exclude: # optional
+        - src/AppBundle/spec/*

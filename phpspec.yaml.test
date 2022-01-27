@@ -9,4 +9,13 @@ suites:
         spec_prefix: 'Spec'
 
 extensions:
-    FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
+    FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension:
+        format:
+            - text
+            - php
+        output:
+            php: phpspec.cov
+        whitelist:
+            - src
+        blacklist: # optional
+            - src/AppBundle/spec
