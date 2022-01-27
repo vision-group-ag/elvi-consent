@@ -10,7 +10,7 @@
         "doctrine/doctrine-bundle": "^2.1",
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.7",
-        "elvi/api-log-bundle": "^0.2",
+        "elvi/api-log-bundle": "dev-master#b20e5e09403f809afb1d706797fbeb5daf07b821",
         "elvi/auth-bundle": "^3.0",
         "ramsey/uuid": "^4.1",
         "sentry/sentry-symfony": "^4.0",
