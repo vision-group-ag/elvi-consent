@@ -28,4 +28,9 @@ final class Version0000Demo extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE app_demo_entity');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }
