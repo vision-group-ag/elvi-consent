@@ -7,7 +7,7 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - \AppTests\_support\Helper\Acceptance
+        - \AppTests\Codeception\_support\Helper\Acceptance
         - Symfony:
             app_path: 'src'
             environment: 'test'

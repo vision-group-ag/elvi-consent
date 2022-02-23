@@ -1,16 +1,17 @@
-namespace: AppTests\_support
+namespace: AppTests\Codeception\_support
 paths:
-    tests: tests
-    output: tests/_output
-    data: tests/_data
-    support: tests/_support
-    envs: tests/_envs
+    tests: tests/Codeception
+    output: tests/Codeception/_output
+    data: tests/Codeception/_data
+    support: tests/Codeception/_support
+    envs: tests/Codeception/_envs
 actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
 params:
     - .env
+    - .env.test
 coverage:
     enabled: true
     remote: true
@@ -19,3 +20,5 @@ coverage:
         - src/*
     exclude: # optional
         - src/AppBundle/spec/*
+settings:
+    shuffle: true

@@ -8,7 +8,7 @@
 actor: ApiTester
 modules:
     enabled:
-        - \AppTests\_support\Helper\Api
+        - \AppTests\Codeception\_support\Helper\Api
         - Symfony:
             app_path: 'src'
             environment: 'test'
