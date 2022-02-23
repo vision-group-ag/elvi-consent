@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace AppTests\api;
+namespace AppTests\Codeception\api;
 
-use AppTests\_support\ApiTester;
+use AppTests\Codeception\_support\ApiTester;
 
 class DemoCest
 {

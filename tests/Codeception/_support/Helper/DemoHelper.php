@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace AppTests\_support\Helper;
+namespace AppTests\Codeception\_support\Helper;
 
 trait DemoHelper
 {

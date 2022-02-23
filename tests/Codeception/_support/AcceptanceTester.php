@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace AppTests\_support;
+namespace AppTests\Codeception\_support;
 
-use AppTests\_support\Helper\DemoHelper;
+use AppTests\Codeception\_support\Helper\DemoHelper;
 
 /**
  * Inherited Methods

@@ -14,6 +14,7 @@
   <testsuites>
     <testsuite name="Project Test Suite">
       <directory>tests</directory>
+      <exclude>tests/Codeception</exclude>
     </testsuite>
   </testsuites>
 </phpunit>
