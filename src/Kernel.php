@@ -40,10 +40,8 @@ class Kernel extends BaseKernel
 
     public function getCacheDir(): string
     {
-        if ($this->environment === 'dev') {
-            $projectCode = basename(dirname(__DIR__));
-            return "/dev/shm/{$projectCode}/cache/{$this->environment}";
-        }
-        return parent::getCacheDir();
+        return is_dir('/opt/docker/etc')
+            ? sprintf('/dev/shm/%s/cache/%s', basename(dirname(__DIR__)), $this->environment)
+            : parent::getCacheDir();
     }
 }
