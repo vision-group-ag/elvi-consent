@@ -9,8 +9,6 @@ suites:
         spec_prefix: 'Spec'
 
 extensions:
-    FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
-extensions:
     FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension:
         format:
             - text

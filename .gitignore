@@ -17,6 +17,8 @@
 /.idea/
 /bin/*
 !/bin/console
+/tests/Codeception/_support/_generated/*
+/tests/Codeception/_output/
 
 ###> friendsofphp/php-cs-fixer ###
 /.php_cs
