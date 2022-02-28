@@ -2,7 +2,7 @@ api_log:
     enabled: true
     storage:
         database: true
-        kibana: true
+        kibana: false
     exclude:
         method:
             - 'GET'
