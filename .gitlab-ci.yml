@@ -25,12 +25,12 @@ tests:
         - name: mariadb:10.6.5
           alias: db
     script:
-        - time php8.0 /bin/composer install --prefer-dist --no-interaction --optimize-autoloader
+        - time php8.1 /bin/composer install --prefer-dist --no-interaction --optimize-autoloader
         - rm -rf $ELVI_CONFIG_REPOSITORY_DIR
         - time git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/elvilibrary/config-repository.git $ELVI_CONFIG_REPOSITORY_DIR;
-        - time php8.0 bin/ecs check
-        - time php8.0 bin/psalm
-        - time php8.0 bin/phpunit
-        - time php8.0 bin/phpspec run
-        - time php8.0 bin/codecept build
-        - time php8.0 bin/codecept run --steps -vvv --fail-fast --debug
+        - time php8.1 bin/codecept build
+        - time php8.1 bin/ecs
+        - time php8.1 bin/psalm
+        - time php8.1 bin/phpunit
+        - time php8.1 bin/phpspec run
+        - time php8.1 bin/codecept run --steps -vvv --fail-fast --debug

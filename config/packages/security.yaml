@@ -1,10 +1,11 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    enable_authenticator_manager: true
     providers:
         auth0:
             id: Elvi\AuthBundle\Security\User\JwtUserProvider
-    encoders:
-        Symfony\Component\Security\Core\User\User: auto
+    password_hashers:
+        Symfony\Component\Security\Core\User\InMemoryUser: auto
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -12,14 +13,14 @@ security:
 
         main:
             pattern: ^/docs
-            anonymous: true
+            security: false
             lazy: true
 
         auth0_jwt_validate:
             pattern: ^/
             stateless: true
-            guard:
-                authenticators: [ Elvi\AuthBundle\Security\Guard\JwtGuardAuthenticator ]
+            custom_authenticators:
+                - Elvi\AuthBundle\Security\Guard\JwtAuthenticator
             provider: auth0
 
             # activate different ways to authenticate

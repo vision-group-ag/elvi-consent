@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.6.2@bca09d74adc704c4eaee36a3c3e9d379e290fc3b"/>
+<files psalm-version="4.22.0@fc2c6ab4d5fa5d644d8617089f012f3bb84b8703">
+  <file src="tests/Codeception/_support/AcceptanceTester.php">
+    <ImplementedReturnTypeMismatch occurrences="7">
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+    </ImplementedReturnTypeMismatch>
+  </file>
+  <file src="tests/Codeception/_support/ApiTester.php">
+    <ImplementedReturnTypeMismatch occurrences="7">
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+      <code>void</code>
+    </ImplementedReturnTypeMismatch>
+  </file>
+</files>

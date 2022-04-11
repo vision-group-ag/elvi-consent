@@ -1,10 +1,9 @@
 <?php
-namespace AppTests\Codeception\_support\Helper;
 
-// here you can define custom actions
-// all public methods declared in helper class will be available in $I
+declare(strict_types=1);
+
+namespace AppTests\Codeception\_support\Helper;
 
 class Api extends \Codeception\Module
 {
-
 }
