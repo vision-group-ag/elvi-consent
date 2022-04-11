@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AppTests\Codeception\_support;
@@ -21,8 +22,4 @@ namespace AppTests\Codeception\_support;
 class ApiTester extends \Codeception\Actor
 {
     use _generated\ApiTesterActions;
-
-   /**
-    * Define custom actions here
-    */
 }
