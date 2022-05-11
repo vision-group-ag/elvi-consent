@@ -47,6 +47,10 @@
     "repositories": [
         {
             "type": "git",
+            "url": "git@gitlab.com:elvilibrary/auth0-php-jwt.git"
+        },
+        {
+            "type": "git",
             "url": "git@gitlab.com:elvilibrary/auth0-jwt-auth-bundle.git"
         },
         {
