@@ -3,29 +3,18 @@
 declare(strict_types=1);
 
 use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::PATHS, [
-        __DIR__ . '/src',
-        __DIR__ . '/tests/Codeception',
-    ]);
-    $parameters->set(Option::SKIP, [
-        __DIR__ . '/tests/Codeception/_support/_generated',
-    ]);
+return static function (ECSConfig $ecsConfig): void {
+    $parameters = $ecsConfig->parameters();
+    $parameters->set(Option::PATHS, [__DIR__ . '/src', __DIR__ . '/tests/Codeception']);
+    $parameters->set(Option::SKIP, [__DIR__ . '/tests/Codeception/_support/_generated']);
     $parameters->set(Option::PARALLEL, true);
 
-    $services = $containerConfigurator->services();
-    $services->set(ArraySyntaxFixer::class)
-        ->call('configure', [[
-            'syntax' => 'short',
-        ]]);
-
-    // run and fix, one by one
-    $containerConfigurator->import(SetList::STRICT);
-    $containerConfigurator->import(SetList::CLEAN_CODE);
-    $containerConfigurator->import(SetList::PSR_12);
+    $ecsConfig->services()->set(ArraySyntaxFixer::class)->call('configure', [['syntax' => 'short']]);
+    $ecsConfig->import(SetList::STRICT);
+    $ecsConfig->import(SetList::CLEAN_CODE);
+    $ecsConfig->import(SetList::PSR_12);
 };
