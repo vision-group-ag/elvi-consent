@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28f19c62ea81ed3750fae054ea92750a",
+    "content-hash": "aacc46ee78aed5ddc2b1e1e699379379",
     "packages": [
         {
             "name": "api-platform/core",
@@ -13617,20 +13617,20 @@
         },
         {
             "name": "symplify/easy-coding-standard",
-            "version": "10.1.4",
+            "version": "10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "3fdbead9da24889727dc11804e9bbfb9d4502d3a"
+                "reference": "c93878b3c052321231519b6540e227380f90be17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/3fdbead9da24889727dc11804e9bbfb9d4502d3a",
-                "reference": "3fdbead9da24889727dc11804e9bbfb9d4502d3a",
+                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/c93878b3c052321231519b6540e227380f90be17",
+                "reference": "c93878b3c052321231519b6540e227380f90be17",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "conflict": {
                 "friendsofphp/php-cs-fixer": "<3.0",
@@ -13642,7 +13642,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "9.5-dev"
+                    "dev-main": "10.3-dev"
                 }
             },
             "autoload": {
@@ -13656,7 +13656,7 @@
             ],
             "description": "Prefixed scoped version of ECS package",
             "support": {
-                "source": "https://github.com/symplify/easy-coding-standard/tree/10.1.4"
+                "source": "https://github.com/symplify/easy-coding-standard/tree/10.3.3"
             },
             "funding": [
                 {
@@ -13668,7 +13668,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-16T15:18:55+00:00"
+            "time": "2022-06-13T14:03:37+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -13951,5 +13951,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
