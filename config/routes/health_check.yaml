@@ -1,0 +1,4 @@
+health_check:
+  resource: .
+  type: health_check
+  prefix: /

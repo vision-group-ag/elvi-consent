@@ -12,4 +12,5 @@ return [
     Auth0\JWTAuthBundle\JWTAuthBundle::class => ['all' => true],
     Elvi\AuthBundle\ElviAuthBundle::class => ['all' => true],
     Elvi\ApiLogBundle\ElviApiLogBundle::class => ['all' => true],
+    Elvi\HealthCheckBundle\ElviHealthCheckBundle::class => ['all' => true],
 ];

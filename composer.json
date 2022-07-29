@@ -12,6 +12,7 @@
         "doctrine/orm": "^2.11",
         "elvi/api-log-bundle": "^1.0",
         "elvi/auth-bundle": "^4.0",
+        "elvi/health-check-bundle": "^0.2",
         "ramsey/uuid": "^4.2",
         "sentry/sentry-symfony": "^4.0",
         "symfony/asset": "^6.0",
@@ -60,6 +61,10 @@
         {
             "type": "git",
             "url": "git@gitlab.com:elvilibrary/api-log-bundle.git"
+        },
+        {
+            "type": "git",
+            "url": "git@gitlab.com:elvilibrary/elvi-health-check-bundle.git"
         }
     ],
     "config": {
