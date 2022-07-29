@@ -195,6 +195,9 @@
     "elvi/auth-bundle": {
         "version": "v3.1"
     },
+    "elvi/health-check-bundle": {
+        "version": "v0.2.2"
+    },
     "felixfbecker/advanced-json-rpc": {
         "version": "v3.2.1"
     },
