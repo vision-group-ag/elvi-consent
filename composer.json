@@ -12,7 +12,7 @@
         "doctrine/orm": "^2.11",
         "elvi/api-log-bundle": "^1.0",
         "elvi/auth-bundle": "^4.0",
-        "elvi/health-check-bundle": "^0.2",
+        "elvi/health-check-bundle": "^0.4",
         "ramsey/uuid": "^4.2",
         "sentry/sentry-symfony": "^4.0",
         "symfony/asset": "^6.0",

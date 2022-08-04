@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3cbdd45f0949a1bdf9628bd53df3921",
+    "content-hash": "0169960e3ae26d91ad7b946f884978db",
     "packages": [
         {
             "name": "api-platform/core",
@@ -1949,19 +1949,20 @@
         },
         {
             "name": "elvi/health-check-bundle",
-            "version": "v0.2.2",
+            "version": "v0.4",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:elvilibrary/elvi-health-check-bundle.git",
-                "reference": "65870ed7e680449122188969ad5814a8fcf96888"
+                "reference": "bb9329d31a356047ddf04a3e6b421b17e4829ccc"
             },
             "require": {
-                "doctrine/dbal": "^3.3",
+                "doctrine/dbal": "^2.13|^3.2",
                 "php": "^8.0",
                 "symfony/console": "^5.4 || ^6.0",
                 "symfony/dotenv": "^5.4 || ^6.0",
-                "symfony/event-dispatcher": "^6.0",
+                "symfony/event-dispatcher": "^5.4 || ^6.0",
                 "symfony/framework-bundle": "^5.4 || ^6.0",
+                "symfony/security-bundle": "^5.4 || ^6.0",
                 "symfony/yaml": "^5.4 || ^6.0"
             },
             "require-dev": {
@@ -1994,7 +1995,7 @@
                 "proprietary"
             ],
             "description": "Elvi Health Check Bundle",
-            "time": "2022-07-29T08:07:59+00:00"
+            "time": "2022-08-04T11:36:45+00:00"
         },
         {
             "name": "fig/link-util",
