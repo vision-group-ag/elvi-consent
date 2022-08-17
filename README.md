@@ -2,7 +2,7 @@
 
 1. Clone this repository
 2. `composer install`
-3. `composer update` (This is needed for symfony/flex to restrict all symfony packages to ^5.4 to avoid conflicts; Decline any recipe suggestions during the process)
+3. `composer update` (This is needed for symfony/flex to restrict all symfony packages to ^6.1 to avoid conflicts; Decline any recipe suggestions during the process)
 4. `bin/robo skeleton:init <git-remote-url>`
 5. Review and add missing parameter values in `.env` and `.env.(elvidev|elvitest|elviapp)` files. Hint - follow common bundles configs:
    - [auth bundle](https://gitlab.com/elviapp/elvi-auth-bundle/-/blob/master/README.md#configuration)
