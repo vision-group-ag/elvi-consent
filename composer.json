@@ -7,43 +7,43 @@
         "ext-iconv": "*",
         "ext-json": "*",
         "api-platform/core": "^2.6",
-        "doctrine/doctrine-bundle": "^2.5",
+        "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
-        "doctrine/orm": "^2.11",
+        "doctrine/orm": "^2.13",
         "elvi/api-log-bundle": "^1.0",
         "elvi/auth-bundle": "^4.0",
         "elvi/health-check-bundle": "^0.4",
-        "ramsey/uuid": "^4.2",
+        "ramsey/uuid": "^4.4",
         "sentry/sentry-symfony": "^4.0",
-        "symfony/asset": "^6.0",
-        "symfony/console": "^6.0",
-        "symfony/dotenv": "^6.0",
-        "symfony/expression-language": "^6.0",
-        "symfony/flex": "^2.0",
-        "symfony/framework-bundle": "^6.0",
-        "symfony/messenger": "^6.0",
-        "symfony/monolog-bundle": "^3.6",
-        "symfony/property-access": "^6.0",
-        "symfony/property-info": "^6.0",
-        "symfony/security-bundle": "^6.0",
-        "symfony/serializer": "^6.0",
-        "symfony/translation": "^6.0",
-        "symfony/twig-bundle": "^6.0",
-        "symfony/validator": "^6.0",
-        "symfony/yaml": "^6.0"
+        "symfony/asset": "^6.1",
+        "symfony/console": "^6.1",
+        "symfony/dotenv": "^6.1",
+        "symfony/expression-language": "^6.1",
+        "symfony/flex": "^2.2",
+        "symfony/framework-bundle": "^6.1",
+        "symfony/messenger": "^6.1",
+        "symfony/monolog-bundle": "^3.8",
+        "symfony/property-access": "^6.1",
+        "symfony/property-info": "^6.1",
+        "symfony/security-bundle": "^6.1",
+        "symfony/serializer": "^6.1",
+        "symfony/translation": "^6.1",
+        "symfony/twig-bundle": "^6.1",
+        "symfony/validator": "^6.1",
+        "symfony/yaml": "^6.1"
     },
     "require-dev": {
-        "codeception/codeception": "^5.0@rc",
+        "codeception/codeception": "^5.0",
         "codeception/module-asserts": "^3.0",
-        "codeception/module-rest": "^3.0",
+        "codeception/module-rest": "^3.2",
         "codeception/module-symfony": "^3.0",
         "codeception/module-doctrine2": "^3.0",
         "consolidation/robo": "^3.0",
         "friends-of-phpspec/phpspec-code-coverage": "^6.1",
         "phpspec/phpspec": "^7.2",
         "roave/security-advisories": "dev-latest",
-        "symplify/easy-coding-standard": "^10.1",
-        "vimeo/psalm": "^4.18"
+        "symplify/easy-coding-standard": "^11.0",
+        "vimeo/psalm": "^4.26"
     },
     "repositories": [
         {
@@ -119,7 +119,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^6.0"
+            "require": "^6.1"
         }
     }
 }
