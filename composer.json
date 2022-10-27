@@ -48,23 +48,23 @@
     "repositories": [
         {
             "type": "git",
-            "url": "git@gitlab.com:elvilibrary/auth0-php-jwt.git"
+            "url": "git@github.com:vision-group-ag/auth0-php-jwt.git"
         },
         {
             "type": "git",
-            "url": "git@gitlab.com:elvilibrary/auth0-jwt-auth-bundle.git"
+            "url": "git@github.com:vision-group-ag/auth0-jwt-auth-bundle.git"
         },
         {
             "type": "git",
-            "url": "git@gitlab.com:elviapp/elvi-auth-bundle.git"
+            "url": "git@github.com:vision-group-ag/elvi-auth-bundle.git"
         },
         {
             "type": "git",
-            "url": "git@gitlab.com:elvilibrary/api-log-bundle.git"
+            "url": "git@github.com:vision-group-ag/elvi-api-log-bundle.git"
         },
         {
             "type": "git",
-            "url": "git@gitlab.com:elvilibrary/elvi-health-check-bundle.git"
+            "url": "git@github.com:vision-group-ag/elvi-health-check-bundle.git"
         }
     ],
     "config": {
