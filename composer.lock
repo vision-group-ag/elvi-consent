@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5dff8068f07dc9fdf21a8202077980bd",
+    "content-hash": "67755f30c4df4b32acdfd74dc43931c4",
     "packages": [
         {
             "name": "api-platform/core",
@@ -1953,11 +1953,11 @@
         },
         {
             "name": "elvi/health-check-bundle",
-            "version": "v0.4",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:vision-group-ag/elvi-health-check-bundle.git",
-                "reference": "bb9329d31a356047ddf04a3e6b421b17e4829ccc"
+                "reference": "5e6684214eef3c194c7555e3a3c8b4b4845cdd1f"
             },
             "require": {
                 "doctrine/dbal": "^2.13|^3.2",
@@ -1999,7 +1999,7 @@
                 "proprietary"
             ],
             "description": "Elvi Health Check Bundle",
-            "time": "2022-08-04T11:36:45+00:00"
+            "time": "2022-10-28T13:53:21+00:00"
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
