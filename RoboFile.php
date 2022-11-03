@@ -11,7 +11,7 @@ class RoboFile extends \Robo\Tasks
     /**
      * @description Reinitializes this directory as a project repository and disassociates it from skeleton repository
      *
-     * @param string $gitRepositoryUrl Git remote repository URL (e.g. git@gitlab.com/elviapp/foobar.git)
+     * @param string $gitRepositoryUrl Git remote repository URL (e.g. git@github.com:vision-group-ag/foobar.git)
      */
     public function skeletonInit(string $gitRepositoryUrl): void
     {
