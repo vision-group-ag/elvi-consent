@@ -1,5 +1,9 @@
 api_platform:
+    path_segment_name_generator: api_platform.path_segment_name_generator.dash
     name_converter: 'Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter'
+    defaults:
+        pagination_client_items_per_page: true
+        pagination_maximum_items_per_page: 100
     mapping:
         paths:
             - '%kernel.project_dir%/config/api-platform'
@@ -13,6 +17,5 @@ api_platform:
                 type: header
     collection:
         pagination:
-            client_items_per_page: true
+            enabled: true
             items_per_page_parameter_name: limit
-            maximum_items_per_page: 100
