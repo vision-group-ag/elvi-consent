@@ -6,15 +6,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
-        "api-platform/core": "^2.6",
+        "api-platform/core": "^3.0",
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
         "elvi/api-log-bundle": "^1.0",
         "elvi/auth-bundle": "^4.0",
         "elvi/health-check-bundle": "^1.0",
-        "ramsey/uuid": "^4.4",
-        "sentry/sentry-symfony": "^4.0",
+        "ramsey/uuid": "^4.6",
+        "sentry/sentry-symfony": "^4.4",
         "symfony/asset": "^6.1",
         "symfony/console": "^6.1",
         "symfony/dotenv": "^6.1",
@@ -43,7 +43,7 @@
         "phpspec/phpspec": "^7.2",
         "roave/security-advisories": "dev-latest",
         "symplify/easy-coding-standard": "^11.0",
-        "vimeo/psalm": "^4.26"
+        "vimeo/psalm": "^4.30"
     },
     "repositories": [
         {
