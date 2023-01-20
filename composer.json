@@ -11,7 +11,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
         "elvi/api-log-bundle": "^1.0",
-        "elvi/auth-bundle": "^4.0",
+        "elvi/auth-bundle": "^5.0",
         "elvi/health-check-bundle": "^1.0",
         "ramsey/uuid": "^4.6",
         "sentry/sentry-symfony": "^4.4",
@@ -46,14 +46,6 @@
         "vimeo/psalm": "^4.30"
     },
     "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:vision-group-ag/auth0-php-jwt.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:vision-group-ag/auth0-jwt-auth-bundle.git"
-        },
         {
             "type": "git",
             "url": "git@github.com:vision-group-ag/elvi-auth-bundle.git"

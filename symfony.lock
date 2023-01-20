@@ -22,12 +22,6 @@
     "auth0/auth0-php": {
         "version": "7.9.2"
     },
-    "auth0/jwt-auth-bundle": {
-        "version": "4.0.0"
-    },
-    "auth0/php-jwt": {
-        "version": "3.3.4"
-    },
     "behat/gherkin": {
         "version": "v4.9.0"
     },
@@ -216,9 +210,6 @@
     "grasmash/expander": {
         "version": "1.0.0"
     },
-    "guzzlehttp/guzzle": {
-        "version": "7.4.1"
-    },
     "guzzlehttp/promises": {
         "version": "1.5.1"
     },
@@ -349,9 +340,6 @@
     },
     "psr/log": {
         "version": "1.1.4"
-    },
-    "psr/simple-cache": {
-        "version": "1.0.1"
     },
     "psy/psysh": {
         "version": "v0.11.2"

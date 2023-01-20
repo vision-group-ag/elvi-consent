@@ -3,7 +3,7 @@ security:
     enable_authenticator_manager: true
     providers:
         auth0:
-            id: Elvi\AuthBundle\Security\User\JwtUserProvider
+            id: Elvi\AuthBundle\Security\JwtUserProvider
     password_hashers:
         Symfony\Component\Security\Core\User\InMemoryUser: auto
     firewalls:
@@ -20,7 +20,7 @@ security:
             pattern: ^/
             stateless: true
             custom_authenticators:
-                - Elvi\AuthBundle\Security\Guard\JwtAuthenticator
+                - Elvi\AuthBundle\Security\JwtAuthorizer
             provider: auth0
 
             # activate different ways to authenticate
@@ -33,4 +33,4 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: "^/docs", roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "^/", role: ROLE_JWT_AUTHENTICATED }
+        - { path: "^/", role: ROLE_USING_TOKEN }

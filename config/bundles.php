@@ -9,7 +9,7 @@ return [
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Sentry\SentryBundle\SentryBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
-    Auth0\JWTAuthBundle\JWTAuthBundle::class => ['all' => true],
+    Auth0\Symfony\Auth0Bundle::class => ['all' => true],
     Elvi\AuthBundle\ElviAuthBundle::class => ['all' => true],
     Elvi\ApiLogBundle\ElviApiLogBundle::class => ['all' => true],
     Elvi\HealthCheckBundle\ElviHealthCheckBundle::class => ['all' => true],
