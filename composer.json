@@ -2,11 +2,11 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
-        "api-platform/core": "^3.0",
+        "api-platform/core": "^3.1",
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
@@ -38,12 +38,12 @@
         "codeception/module-rest": "^3.2",
         "codeception/module-symfony": "^3.0",
         "codeception/module-doctrine2": "^3.0",
-        "consolidation/robo": "^3.0",
+        "consolidation/robo": "^4.0",
         "friends-of-phpspec/phpspec-code-coverage": "^6.2",
         "phpspec/phpspec": "^7.2",
         "roave/security-advisories": "dev-latest",
         "symplify/easy-coding-standard": "^11.0",
-        "vimeo/psalm": "^4.30"
+        "vimeo/psalm": "^5.6"
     },
     "repositories": [
         {

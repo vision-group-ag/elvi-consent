@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.22.0@fc2c6ab4d5fa5d644d8617089f012f3bb84b8703">
+<files psalm-version="5.6.0@e784128902dfe01d489c4123d69918a9f3c1eac5">
   <file src="tests/Codeception/_support/AcceptanceTester.php">
-    <ImplementedReturnTypeMismatch occurrences="7">
+    <ImplementedReturnTypeMismatch>
       <code>void</code>
       <code>void</code>
       <code>void</code>
@@ -12,7 +12,7 @@
     </ImplementedReturnTypeMismatch>
   </file>
   <file src="tests/Codeception/_support/ApiTester.php">
-    <ImplementedReturnTypeMismatch occurrences="7">
+    <ImplementedReturnTypeMismatch>
       <code>void</code>
       <code>void</code>
       <code>void</code>

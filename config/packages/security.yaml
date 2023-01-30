@@ -1,6 +1,4 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
-    enable_authenticator_manager: true
     providers:
         auth0:
             id: Elvi\AuthBundle\Security\JwtUserProvider
@@ -33,4 +31,4 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: "^/docs", roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "^/", role: ROLE_USING_TOKEN }
+        - { path: "^/", role: ROLE_USING_TOKEN } # <-- Make sure to change to ROLE_SERVICE_<YOUR_SERVICE_CODE>

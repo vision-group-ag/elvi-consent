@@ -4,17 +4,27 @@ declare(strict_types=1);
 
 use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
-use Symplify\EasyCodingStandard\ValueObject\Option;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function (ECSConfig $ecsConfig): void {
-    $parameters = $ecsConfig->parameters();
-    $parameters->set(Option::PATHS, [__DIR__ . '/src', __DIR__ . '/tests/Codeception']);
-    $parameters->set(Option::SKIP, [__DIR__ . '/tests/Codeception/_support/_generated']);
-    $parameters->set(Option::PARALLEL, true);
+return static function (ECSConfig $ecsConfig): void
+{
+    $ecsConfig->sets([
+        SetList::STRICT,
+        SetList::CLEAN_CODE,
+        SetList::PSR_12,
+    ]);
+
+    $ecsConfig->paths([
+        __DIR__ . '/src',
+        __DIR__ . '/tests/Codeception'
+    ]);
+
+    $ecsConfig->skip([
+        __DIR__ . '/tests/Codeception/_support/_generated',
+    ]);
 
     $ecsConfig->services()->set(ArraySyntaxFixer::class)->call('configure', [['syntax' => 'short']]);
-    $ecsConfig->import(SetList::STRICT);
-    $ecsConfig->import(SetList::CLEAN_CODE);
-    $ecsConfig->import(SetList::PSR_12);
+
+    $ecsConfig->parallel();
+
 };
