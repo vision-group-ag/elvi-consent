@@ -15,7 +15,7 @@
         <directory name="tests/Codeception/" />
         <ignoreFiles>
             <directory name="vendor" />
-            <directory name="tests/Codeception/_support/" />
+            <directory name="tests/Codeception/_support/_generated/" />
         </ignoreFiles>
     </projectFiles>
 
