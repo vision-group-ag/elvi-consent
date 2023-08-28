@@ -1,5 +1,6 @@
 auth0:
     sdk:
+        strategy: 'api'
         domain: "%env(AUTH0_DOMAIN)%"
         audiences: ["%env(AUTH0_AUDIENCE)%"]
         client_id: "%env(AUTH0_CLIENT_ID)%"
