@@ -23,7 +23,7 @@ return static function (ECSConfig $ecsConfig): void
         __DIR__ . '/tests/Codeception/_support/_generated',
     ]);
 
-    $ecsConfig->services()->set(ArraySyntaxFixer::class)->call('configure', [['syntax' => 'short']]);
+    $ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, ['syntax' => 'short']);
 
     $ecsConfig->parallel();
 
