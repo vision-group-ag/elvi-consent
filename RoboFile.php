@@ -30,6 +30,9 @@ class RoboFile extends \Robo\Tasks
         $this->_exec('git remote add origin ' . escapeshellarg($gitRepositoryUrl));
         $this->say("Added '{$gitRepositoryUrl}' as git remote");
 
+        $this->_exec('x=$(cat .gitignore); echo "$x" | grep -v \'composer.lock\' > .gitignore ');
+        $this->say("Removed composer.lock from .gitignore");
+
         $this->io()->success("Skeleton initialization completed successfully");
     }
 
