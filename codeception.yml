@@ -12,6 +12,7 @@ extensions:
 params:
     - .env
     - .env.test
+    - .env.test.local    
 coverage:
     enabled: true
     remote: true
