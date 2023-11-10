@@ -10,7 +10,7 @@
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
-        "elvi/api-log-bundle": "^1.0",
+        "elvi/api-log-bundle": "^2.0",
         "elvi/auth-bundle": "^5.0",
         "elvi/health-check-bundle": "^1.0",
         "ramsey/uuid": "^4.6",
