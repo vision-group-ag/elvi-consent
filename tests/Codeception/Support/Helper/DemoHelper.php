@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AppTests\Codeception\_support\Helper;
+namespace AppTests\Codeception\Support\Helper;
 
 trait DemoHelper
 {

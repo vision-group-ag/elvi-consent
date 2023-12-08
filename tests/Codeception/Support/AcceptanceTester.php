@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AppTests\Codeception\_support;
+namespace AppTests\Codeception\Support;
+
+use AppTests\Codeception\Support\Helper\DemoHelper;
 
 /**
  * Inherited Methods
@@ -19,7 +21,8 @@ namespace AppTests\Codeception\_support;
  *
  * @SuppressWarnings(PHPMD)
 */
-class ApiTester extends \Codeception\Actor
+class AcceptanceTester extends \Codeception\Actor
 {
-    use _generated\ApiTesterActions;
+    use _generated\AcceptanceTesterActions;
+    use DemoHelper;
 }

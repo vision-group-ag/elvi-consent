@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AppTests\Codeception\api;
+namespace AppTests\Codeception\Api;
 
-use AppTests\Codeception\_support\ApiTester;
+use AppTests\Codeception\Support\ApiTester;
 
 class DemoCest
 {

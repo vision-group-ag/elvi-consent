@@ -1,9 +1,10 @@
-namespace: AppTests\Codeception\_support
+namespace: AppTests\Codeception
+support_namespace: Support
 paths:
     tests: tests/Codeception
     output: tests/Codeception/_output
-    data: tests/Codeception/_data
-    support: tests/Codeception/_support
+    data: tests/Codeception/Support/Data
+    support: tests/Codeception/Support
     envs: tests/Codeception/_envs
 actor_suffix: Tester
 extensions:
@@ -12,14 +13,12 @@ extensions:
 params:
     - .env
     - .env.test
-    - .env.test.local    
+    - .env.test.local
 coverage:
     enabled: true
     remote: true
     remote_config: codeception.yml
     include:
         - src/*
-    exclude: # optional
-        - src/AppBundle/spec/*
 settings:
     shuffle: true
