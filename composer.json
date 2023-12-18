@@ -35,12 +35,13 @@
     "require-dev": {
         "codeception/codeception": "^5.0",
         "codeception/module-asserts": "^3.0",
+        "codeception/module-doctrine2": "^3.0",
         "codeception/module-rest": "^3.2",
         "codeception/module-symfony": "^3.0",
-        "codeception/module-doctrine2": "^3.0",
         "consolidation/robo": "^4.0",
         "friends-of-phpspec/phpspec-code-coverage": "^6.3",
         "phpspec/phpspec": "^7.2",
+        "phpunit/phpcov": "^9",
         "roave/security-advisories": "dev-latest",
         "symplify/easy-coding-standard": "^12.0",
         "vimeo/psalm": "^5.6"
