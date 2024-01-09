@@ -20,11 +20,12 @@ return static function (ECSConfig $ecsConfig): void
     ]);
 
     $ecsConfig->skip([
-        __DIR__ . '/tests/Codeception/_support/_generated',
+        __DIR__ . '/tests/Codeception/Support/_generated',
     ]);
 
     $ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, ['syntax' => 'short']);
 
+    $ecsConfig->cacheDirectory(__DIR__ . '/var/cache/ecs');
     $ecsConfig->parallel();
 
 };

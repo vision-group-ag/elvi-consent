@@ -6,7 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
-        "api-platform/core": "^3.1",
+        "api-platform/core": "^3.2",
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
@@ -113,7 +113,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^6.3||^2.3"
+            "require": "^6.4"
         }
     }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="tests/bootstrap.php">
-  <coverage processUncoveredFiles="true">
-    <include>
-      <directory>src</directory>
-    </include>
-  </coverage>
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+        backupGlobals="false"
+        colors="true"
+        bootstrap="tests/bootstrap.php"
+        cacheDirectory="var/cache/phpunit">
   <php>
     <ini name="error_reporting" value="-1"/>
     <server name="APP_ENV" value="test" force="true"/>
@@ -13,8 +14,15 @@
   </php>
   <testsuites>
     <testsuite name="Project Test Suite">
-      <directory>tests</directory>
-      <exclude>tests/Codeception</exclude>
+      <directory>tests/PhpUnit</directory>
     </testsuite>
   </testsuites>
+  <source>
+    <include>
+      <directory>src</directory>
+    </include>
+    <exclude>
+      <file>src/Kernel.php</file>
+    </exclude>
+  </source>
 </phpunit>
