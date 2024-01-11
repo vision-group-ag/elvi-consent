@@ -24,31 +24,16 @@
     </fileExtensions>
 
     <issueHandlers>
-        <TooManyArguments>
-            <errorLevel type="suppress">
-                <referencedFunction name="Doctrine\Common\Collections\ExpressionBuilder::orX" />
-                <referencedFunction name="Doctrine\Common\Collections\ExpressionBuilder::andX" />
-                <referencedFunction name="Doctrine\ORM\Query\Expr::orX" />
-                <referencedFunction name="Doctrine\ORM\Query\Expr::andX" />
-                <referencedFunction name="Doctrine\Persistence\ObjectManager::flush" />
-            </errorLevel>
-        </TooManyArguments>
         <UndefinedInterfaceMethod>
             <errorLevel type="suppress">
                 <referencedMethod name="DateTimeInterface::modify"/>
                 <referencedMethod name="DateTimeInterface::setTimezone"/>
             </errorLevel>
         </UndefinedInterfaceMethod>
-        <InvalidArgument>
-            <errorLevel type="suppress">
-                <referencedFunction name="Doctrine\Common\Collections\ArrayCollection::add"/>
-                <referencedFunction name="Doctrine\Common\Collections\ArrayCollection::contains"/>
-            </errorLevel>
-        </InvalidArgument>
-        <InvalidDocblock>
-            <errorLevel type="suppress">
-                <file name="vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php" />
-            </errorLevel>
-        </InvalidDocblock>
     </issueHandlers>
+
+    <plugins>
+        <pluginClass class="Psalm\MockeryPlugin\Plugin"/>
+        <pluginClass class="Weirdan\DoctrinePsalmPlugin\Plugin"/>
+    </plugins>
 </psalm>
