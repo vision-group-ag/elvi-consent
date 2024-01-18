@@ -20,5 +20,7 @@ coverage:
     remote_config: codeception.yml
     include:
         - src/*
+    exclude:
+        - src/Kernel.php
 settings:
     shuffle: true
