@@ -39,7 +39,6 @@
         "codeception/module-doctrine": "^3.1",
         "codeception/module-rest": "^3.2",
         "codeception/module-symfony": "^3.0",
-        "consolidation/robo": "^5.0",
         "elvi/codeception-helpers": "^0.2",
         "friends-of-phpspec/phpspec-code-coverage": "^6.3",
         "mockery/mockery": "^1.6",
@@ -114,7 +113,22 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "skeleton:init" : [
+            "[ -f ./src/Cli/SkeletonInitCommand.php ] || (echo 'Skeleton initializer already removed' && exit 1)",
+            "App\\Cli\\SkeletonInitCommand"
+        ],
+        "skeleton:demo:remove": [
+            "[ -f ./src/Cli/SkeletonDemoRemoveCommand.php ] || (echo 'Skeleton artifacts already removed' && exit 1)",
+            "App\\Cli\\SkeletonDemoRemoveCommand",
+            "rm src/Cli/SkeletonInitCommand.php",
+            "rm src/Cli/SkeletonDemoRemoveCommand.php",
+            "@auto-scripts"
         ]
+    },
+    "scripts-descriptions": {
+        "skeleton:init": "Initializes a new project from this skeleton",
+        "skeleton:demo:remove": "Removes the demo files from this project"
     },
     "conflict": {
         "phpstan/phpdoc-parser": "2.*",
