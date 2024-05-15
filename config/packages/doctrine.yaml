@@ -6,8 +6,8 @@ doctrine:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
         options:
-            !php/const:PDO::MYSQL_ATTR_SSL_CA: ''
-            !php/const:PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT: false
+            !php/const PDO::MYSQL_ATTR_SSL_CA: ''
+            !php/const PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT: false
         schema_filter: '#^(?!api_log)#'
 
         # IMPORTANT: You MUST configure your server version,

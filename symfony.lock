@@ -88,9 +88,6 @@
     "consolidation/robo": {
         "version": "2.2.2"
     },
-    "consolidation/self-update": {
-        "version": "1.2.0"
-    },
     "dflydev/dot-access-data": {
         "version": "v1.1.0"
     },
