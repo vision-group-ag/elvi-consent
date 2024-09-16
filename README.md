@@ -13,5 +13,5 @@
 9. Add relevant data to `README.md` file
 10. Commit and push everything to the new repository
 11. Setup status context configuration
-    - [config bundle](https://github.com/vision-group-ag/elvi-watcher/blob/master/src/Watch/Health/ApiContextProvider.php#L18)
+    - [config bundle](https://github.com/vision-group-ag/elvi-project-config/tree/master/config/repos)
     - [status.elvi.io](https://status.elvi.io)
