@@ -12,3 +12,6 @@
 8. Optionally, if you are not intending to use Robo, remove `consolidation/robo` from `composer.json`, delete `RoboFile.php` and re-run `composer update`
 9. Add relevant data to `README.md` file
 10. Commit and push everything to the new repository
+11. Setup status context configuration
+    - [config bundle](https://github.com/vision-group-ag/elvi-watcher/blob/master/src/Watch/Health/ApiContextProvider.php#L18)
+    - [status.elvi.io](https://status.elvi.io)
