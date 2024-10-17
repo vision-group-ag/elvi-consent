@@ -15,22 +15,22 @@
         "elvi/health-check-bundle": "^1.0",
         "ramsey/uuid": "^4.6",
         "sentry/sentry-symfony": "^5.0",
-        "symfony/asset": "^7.0",
-        "symfony/console": "^7.0",
-        "symfony/dotenv": "^7.0",
-        "symfony/expression-language": "^7.0",
+        "symfony/asset": "*",
+        "symfony/console": "*",
+        "symfony/dotenv": "*",
+        "symfony/expression-language": "*",
         "symfony/flex": "^2.2",
-        "symfony/framework-bundle": "^7.0",
-        "symfony/messenger": "^7.0",
+        "symfony/framework-bundle": "*",
+        "symfony/messenger": "*",
         "symfony/monolog-bundle": "^3.8",
-        "symfony/property-access": "^7.0",
-        "symfony/property-info": "^7.0",
-        "symfony/security-bundle": "^7.0",
-        "symfony/serializer": "^7.0",
-        "symfony/translation": "^7.0",
-        "symfony/twig-bundle": "^7.0",
-        "symfony/validator": "^7.0",
-        "symfony/yaml": "^7.0"
+        "symfony/property-access": "*",
+        "symfony/property-info": "*",
+        "symfony/security-bundle": "*",
+        "symfony/serializer": "*",
+        "symfony/translation": "*",
+        "symfony/twig-bundle": "*",
+        "symfony/validator": "*",
+        "symfony/yaml": "*"
     },
     "require-dev": {
         "codeception/codeception": "^5.0",
@@ -121,7 +121,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^7.0"
+            "require": "7.1.*"
         }
     }
 }
