@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api;
+namespace AppTests\Codeception\Api;
 
 use AppTests\Codeception\Support\ApiTester;
 
