@@ -1,17 +1,12 @@
 resources:
     App\Entity\DemoEntity:
         shortName: demo-entities
-        collectionOperations:
-            get: ~
-            post:
-                output: false
-        itemOperations:
-            get: ~
-            delete: ~
+        operations:
+            ApiPlatform\Metadata\Get: ~
+            ApiPlatform\Metadata\Post: ~
+            ApiPlatform\Metadata\Patch: ~
+            ApiPlatform\Metadata\Delete: ~
+            ApiPlatform\Metadata\GetCollection: ~
         properties:
             id:
                 identifier: true
-            public:
-                attributes:
-                    serialization_context:
-                        serialized_name: isPublic

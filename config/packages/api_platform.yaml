@@ -19,3 +19,12 @@ api_platform:
         pagination:
             enabled: true
             items_per_page_parameter_name: limit
+    formats:
+        jsonld: [ 'application/ld+json' ]
+        json: [ 'application/json' ]
+    docs_formats:
+        jsonvndopenapi: [ 'application/vnd.openapi+json' ]
+        yamlvndopenapi: [ 'application/vnd.openapi+yaml' ]
+        jsonld: [ 'application/ld+json' ]
+        json: [ 'application/json' ]
+        html: [ 'text/html' ]
