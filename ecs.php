@@ -23,6 +23,7 @@ return static function (ECSConfig $ecsConfig): void
         __DIR__ . '/tests/Codeception/Support/_generated',
     ]);
 
+    $ecsConfig->rule(NoWhitespaceInBlankLineFixer::class);
     $ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, ['syntax' => 'short']);
 
     $ecsConfig->cacheDirectory(__DIR__ . '/var/cache/ecs');
