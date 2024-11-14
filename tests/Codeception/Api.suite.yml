@@ -17,6 +17,7 @@ modules:
             url: /
         - Asserts
         - \Elvi\CodeceptionHelpers\Api:
-              depends:
-                  - Asserts
-                  - REST
+            depends:
+                - Asserts
+                - REST
+                - Symfony

@@ -40,7 +40,7 @@
         "codeception/module-rest": "^3.2",
         "codeception/module-symfony": "^3.0",
         "consolidation/robo": "^5.0",
-        "elvi/codeception-helpers": "^0.1",
+        "elvi/codeception-helpers": "^0.2",
         "friends-of-phpspec/phpspec-code-coverage": "^6.3",
         "mockery/mockery": "^1.6",
         "phpspec/phpspec": "^7.2",
@@ -117,6 +117,7 @@
         ]
     },
     "conflict": {
+        "phpstan/phpdoc-parser": "2.*",
         "symfony/symfony": "*"
     },
     "extra": {
