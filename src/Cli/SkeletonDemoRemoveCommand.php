@@ -9,6 +9,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Filesystem\Filesystem;
 
 #[AsCommand('skeleton:demo:remove')]
 class SkeletonDemoRemoveCommand extends Command
@@ -45,12 +46,9 @@ class SkeletonDemoRemoveCommand extends Command
             'tests/Spec/Entity/DemoEntitySpec.php',
         ];
 
+        $fs = new Filesystem();
         foreach ($files as $file) {
-            $success = unlink($rootDir . $file);
-
-            if (!$success) {
-                throw new \RuntimeException(sprintf("Failed to remove file '%s'", $rootDir . $file));
-            }
+            $fs->remove($rootDir . $file);
         }
     }
 }

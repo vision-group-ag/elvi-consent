@@ -10,13 +10,41 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Filesystem\Filesystem;
 
 #[AsCommand('skeleton:init')]
 class SkeletonInitCommand extends Command
 {
+    private const GIT_REPOSITORY_URL_PATTERN = '#^(git@.*\.git|https?://.*|/.*)$#';
+
     protected function configure()
     {
         $this->addArgument('git-repository-url', InputArgument::REQUIRED, 'The git repository url');
+    }
+
+    protected function interact(InputInterface $input, OutputInterface $output)
+    {
+        $io = new SymfonyStyle($input, $output);
+
+        $gitRepositoryUrl = $input->getArgument('git-repository-url');
+        if (null === $gitRepositoryUrl) {
+            $gitRepositoryUrl = $io->ask('What is the git repository URL?', null, function ($gitRepositoryUrl) {
+                if (null === $gitRepositoryUrl) {
+                    throw new \RuntimeException('The git repository URL cannot be empty');
+                }
+                if (!preg_match(self::GIT_REPOSITORY_URL_PATTERN, $gitRepositoryUrl)) {
+                    throw new \RuntimeException(
+                        sprintf(
+                            "'%s' does not look like a valid git URL - should start with 'git@', 'http(s)://' or just '/' for local filesystem",
+                            $gitRepositoryUrl
+                        )
+                    );
+                }
+
+                    return $gitRepositoryUrl;
+            });
+            $input->setArgument('git-repository-url', $gitRepositoryUrl);
+        }
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -24,15 +52,15 @@ class SkeletonInitCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         $gitRepositoryUrl = $input->getArgument('git-repository-url');
-        $repositoryUrlPattern = '#^(git@.*\.git|https?://.*)$#';
 
-        if (!preg_match($repositoryUrlPattern, $gitRepositoryUrl)) {
-            $io->error(sprintf("'%s' does not look like a valid git URL - should start with 'git@' or 'http(s)://'", $gitRepositoryUrl));
+        if (!preg_match(self::GIT_REPOSITORY_URL_PATTERN, $gitRepositoryUrl)) {
+            $io->error(sprintf("'%s' does not look like a valid git URL - should start with 'git@', 'http(s)://' or just '/' for local filesystem", $gitRepositoryUrl));
 
             return Command::FAILURE;
         }
 
-        rmdir(__DIR__ . '/.git/');
+        $fs = new Filesystem();
+        $fs->remove(__DIR__ . '/../../.git/');
         $io->writeln('Removed .git directory');
 
         $shellOutput = [];
@@ -51,7 +79,7 @@ class SkeletonInitCommand extends Command
 
             return Command::FAILURE;
         }
-        $io->writeln("Added '{$gitRepositoryUrl}' as git remote");
+        $io->writeln("Added '{$gitRepositoryUrl}' as git remote 'origin'");
 
         $shellOutput = [];
         exec('x=$(cat .gitignore); echo "$x" | grep -v \'composer.lock\' > .gitignore ', $shellOutput, $exitCode);

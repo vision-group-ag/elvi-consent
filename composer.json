@@ -114,12 +114,16 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+        "skeleton:check" : [
+            "[ -f ./src/Cli/SkeletonInitCommand.phps ] || echo \"\\e[41;97m     Skeleton initializer already removed     \\e[0m\\n\"",
+            "[ -f ./src/Cli/SkeletonDemoRemoveCommand.phps ] || echo \"\\e[41;97m      Skeleton artifacts already removed      \\e[0m\\n\""
+        ],
         "skeleton:init" : [
-            "[ -f ./src/Cli/SkeletonInitCommand.php ] || (echo 'Skeleton initializer already removed' && exit 1)",
+            "@skeleton:check",
             "App\\Cli\\SkeletonInitCommand"
         ],
         "skeleton:demo:remove": [
-            "[ -f ./src/Cli/SkeletonDemoRemoveCommand.php ] || (echo 'Skeleton artifacts already removed' && exit 1)",
+            "@skeleton:check",
             "App\\Cli\\SkeletonDemoRemoveCommand",
             "rm src/Cli/SkeletonInitCommand.php",
             "rm src/Cli/SkeletonDemoRemoveCommand.php",
