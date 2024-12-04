@@ -17,6 +17,7 @@ params:
 coverage:
     enabled: true
     remote: true
+    show_uncovered: true
     remote_config: codeception.yml
     include:
         - src/*
