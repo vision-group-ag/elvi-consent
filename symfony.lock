@@ -73,24 +73,6 @@
     "composer/xdebug-handler": {
         "version": "2.0.3"
     },
-    "consolidation/annotated-command": {
-        "version": "4.2.3"
-    },
-    "consolidation/config": {
-        "version": "2.0.1"
-    },
-    "consolidation/log": {
-        "version": "2.0.2"
-    },
-    "consolidation/output-formatters": {
-        "version": "4.1.2"
-    },
-    "consolidation/robo": {
-        "version": "2.2.2"
-    },
-    "dflydev/dot-access-data": {
-        "version": "v1.1.0"
-    },
     "dnoegel/php-xdg-base-dir": {
         "version": "v0.1.1"
     },
@@ -192,14 +174,8 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
-    "grasmash/expander": {
-        "version": "1.0.0"
-    },
     "guzzlehttp/psr7": {
         "version": "1.8.3"
-    },
-    "http-interop/http-factory-guzzle": {
-        "version": "1.2.0"
     },
     "jean85/pretty-package-versions": {
         "version": "2.0.5"
@@ -209,9 +185,6 @@
     },
     "laminas/laminas-code": {
         "version": "4.5.0"
-    },
-    "league/container": {
-        "version": "2.5.0"
     },
     "monolog/monolog": {
         "version": "2.3.5"
@@ -462,9 +435,6 @@
             "src/Kernel.php"
         ]
     },
-    "symfony/http-client": {
-        "version": "v5.4.1"
-    },
     "symfony/http-foundation": {
         "version": "v5.4.1"
     },
@@ -524,9 +494,6 @@
     },
     "symfony/polyfill-uuid": {
         "version": "v1.23.0"
-    },
-    "symfony/process": {
-        "version": "v5.4.0"
     },
     "symfony/property-access": {
         "version": "v5.4.0"

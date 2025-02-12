@@ -15,7 +15,7 @@ use Symfony\Component\Filesystem\Filesystem;
 #[AsCommand('skeleton:init')]
 class SkeletonInitCommand extends Command
 {
-    private const GIT_REPOSITORY_URL_PATTERN = '#^(git@.*\.git|https?://.*|/.*)$#';
+    private const string GIT_REPOSITORY_URL_PATTERN = '#^(git@.*\.git|https?://.*|/.*)$#';
 
     protected function configure()
     {
@@ -28,7 +28,7 @@ class SkeletonInitCommand extends Command
 
         $gitRepositoryUrl = $input->getArgument('git-repository-url');
         if (null === $gitRepositoryUrl) {
-            $gitRepositoryUrl = $io->ask('What is the git repository URL?', null, function ($gitRepositoryUrl) {
+            $gitRepositoryUrl = $io->ask('What is the git repository URL?', null, function (?string $gitRepositoryUrl): string {
                 if (null === $gitRepositoryUrl) {
                     throw new \RuntimeException('The git repository URL cannot be empty');
                 }
@@ -41,7 +41,7 @@ class SkeletonInitCommand extends Command
                     );
                 }
 
-                    return $gitRepositoryUrl;
+                return $gitRepositoryUrl;
             });
             $input->setArgument('git-repository-url', $gitRepositoryUrl);
         }
