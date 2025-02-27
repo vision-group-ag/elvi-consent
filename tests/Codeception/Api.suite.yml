@@ -12,12 +12,25 @@ modules:
         - Symfony:
             app_path: 'src'
             environment: 'test'
+        - Doctrine:
+            depends: Symfony
+            cleanup: true
         - REST:
             depends: Symfony
             url: /
         - Asserts
-        - \Elvi\CodeceptionHelpers\Api:
+        - Elvi\CodeceptionHelpers\Api:
             depends:
-                - Asserts
-                - REST
-                - Symfony
+              - Asserts
+              - REST
+              - Symfony
+        - Elvi\CodeceptionHelpers\Asserts:
+            depends:
+              - Asserts
+        - Elvi\CodeceptionHelpers\Cli:
+            depends:
+              - Asserts
+              - Symfony
+        - Elvi\CodeceptionHelpers\ServiceMocker:
+            depends:
+              - Symfony

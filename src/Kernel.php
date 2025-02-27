@@ -38,6 +38,7 @@ class Kernel extends BaseKernel
         }
     }
 
+    #[\Override]
     public function getCacheDir(): string
     {
         return is_dir('/opt/docker/etc')

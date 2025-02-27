@@ -17,11 +17,13 @@ class SkeletonInitCommand extends Command
 {
     private const string GIT_REPOSITORY_URL_PATTERN = '#^(git@.*\.git|https?://.*|/.*)$#';
 
+    #[\Override]
     protected function configure()
     {
         $this->addArgument('git-repository-url', InputArgument::REQUIRED, 'The git repository url');
     }
 
+    #[\Override]
     protected function interact(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
@@ -47,6 +49,7 @@ class SkeletonInitCommand extends Command
         }
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);

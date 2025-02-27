@@ -14,6 +14,7 @@ use Symfony\Component\Filesystem\Filesystem;
 #[AsCommand('skeleton:demo:remove')]
 class SkeletonDemoRemoveCommand extends Command
 {
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
@@ -43,7 +44,7 @@ class SkeletonDemoRemoveCommand extends Command
             'config/validator/DemoEntity.yaml',
             'tests/Codeception/Acceptance/Features/demo.feature',
             'tests/Codeception/Api/DemoCest.php',
-            'tests/Spec/Entity/DemoEntitySpec.php',
+            'tests/PhpUnit/Entity/DemoTest.php',
         ];
 
         $fs = new Filesystem();
