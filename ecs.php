@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
+use PhpCsFixer\Fixer\Whitespace\BlankLineBeforeStatementFixer;
 use PhpCsFixer\Fixer\Whitespace\NoWhitespaceInBlankLineFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
@@ -25,9 +26,9 @@ return static function (ECSConfig $ecsConfig): void
     ]);
 
     $ecsConfig->rule(NoWhitespaceInBlankLineFixer::class);
+    $ecsConfig->rule(BlankLineBeforeStatementFixer::class);
     $ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, ['syntax' => 'short']);
 
     $ecsConfig->cacheDirectory(__DIR__ . '/var/cache/ecs');
     $ecsConfig->parallel();
-
 };
