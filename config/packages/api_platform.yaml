@@ -22,9 +22,3 @@ api_platform:
     formats:
         jsonld: [ 'application/ld+json' ]
         json: [ 'application/json' ]
-    docs_formats:
-        jsonvndopenapi: [ 'application/vnd.openapi+json' ]
-        yamlvndopenapi: [ 'application/vnd.openapi+yaml' ]
-        jsonld: [ 'application/ld+json' ]
-        json: [ 'application/json' ]
-        html: [ 'text/html' ]
