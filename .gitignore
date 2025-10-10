@@ -15,6 +15,7 @@
 ###< phpunit/phpunit ###
 
 /.idea/
+/.vscode/
 /bin/*
 !/bin/console
 /tests/Codeception/_support/_generated/*
