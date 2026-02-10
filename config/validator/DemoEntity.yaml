@@ -3,12 +3,15 @@ App\Entity\DemoEntity:
         - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
     properties:
         id:
-            - Type: string
+            - Type:
+                type: string
             - Length:
                 min: 36
                 max: 36
         name:
-            - Type: string
+            - Type:
+                type: string
             - NotBlank: ~
         isPublic:
-            - Type: bool
+            - Type:
+                type: bool
