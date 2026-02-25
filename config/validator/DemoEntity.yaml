@@ -1,6 +1,7 @@
 App\Entity\DemoEntity:
     constraints:
-        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+              fields: name
     properties:
         id:
             - Type:
