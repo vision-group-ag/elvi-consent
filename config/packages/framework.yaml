@@ -20,5 +20,6 @@ framework:
         enabled: true
 
     serializer:
+        name_converter: 'Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter'
         mapping:
             path: '%kernel.project_dir%/config/serialization/'
