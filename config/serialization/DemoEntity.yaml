@@ -1,4 +1,0 @@
-App\Entity\DemoEntity:
-    attributes:
-        public:
-            serialized_name: is_public
