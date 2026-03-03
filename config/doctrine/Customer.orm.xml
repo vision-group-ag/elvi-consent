@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
+    <entity name="App\Entity\Customer" table="customer">
+        <id name="id" type="guid">
+            <options>
+                <option name="collation">ascii_bin</option>
+            </options>
+        </id>
+
+        <field name="externalIdentifier"/>
+        <field name="salesChannel" length="20"/>
+        <field name="rawData" type="json"/>
+        <field name="consentStatus" length="20" enum-type="App\Enum\ConsentStatus"/>
+        <field name="decisionDate" type="datetime_immutable" nullable="true"/>
+        <field name="createdAt" type="datetime_immutable"/>
+
+        <indexes>
+            <index name="idx_customer_external_channel" columns="external_identifier,sales_channel"/>
+            <index name="idx_customer_consent_status" columns="consent_status"/>
+        </indexes>
+    </entity>
+</doctrine-mapping>
