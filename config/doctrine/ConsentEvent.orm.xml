@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
+    <entity name="App\Entity\ConsentEvent" table="consent_event">
+        <id name="id" type="guid">
+            <options>
+                <option name="collation">ascii_bin</option>
+            </options>
+        </id>
+
+        <many-to-one field="customer" target-entity="App\Entity\Customer">
+            <join-column name="customer_id" referenced-column-name="id" nullable="false"/>
+        </many-to-one>
+
+        <field name="source" length="20" enum-type="App\Enum\ConsentSource"/>
+        <field name="eventType" length="20" enum-type="App\Enum\ConsentStatus"/>
+        <field name="consentVersionSlug" nullable="true"/>
+        <field name="consentText" type="text" nullable="true"/>
+        <field name="ipAddress" nullable="true"/>
+        <field name="userAgent" type="text" nullable="true"/>
+        <field name="metadata" type="json"/>
+        <field name="createdAt" type="datetime_immutable"/>
+
+        <indexes>
+            <index name="idx_consent_event_customer" columns="customer_id,created_at"/>
+        </indexes>
+    </entity>
+</doctrine-mapping>

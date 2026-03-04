@@ -1,0 +1,7 @@
+resources:
+  App\Entity\Customer:
+    attributes:
+      pagination_items_per_page: 100
+
+    operations:
+      ApiPlatform\Metadata\GetCollection: ~

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
-    <entity name="App\Entity\Customer" table="customer">
+    <entity name="App\Entity\Customer" table="customer" repository-class="App\Repository\CustomerRepository">
         <id name="id" type="guid">
             <options>
                 <option name="collation">ascii_bin</option>

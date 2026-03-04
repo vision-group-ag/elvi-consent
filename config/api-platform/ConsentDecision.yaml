@@ -1,0 +1,16 @@
+resources:
+    App\Dto\ConsentDecisionRequest:
+        shortName: 'consent-landing-page'
+        operations:
+            _api_consent_optin:
+                method: 'POST'
+                uriTemplate: 'landing-page/{salesChannel}/optin'
+                class: ApiPlatform\Metadata\Post
+                status: 200
+                processor: 'App\State\Processor\ConsentOptInProcessor'
+            _api_consent_optout:
+                method: 'POST'
+                uriTemplate: 'landing-page/{salesChannel}/optout'
+                class: ApiPlatform\Metadata\Post
+                status: 200
+                processor: 'App\State\Processor\ConsentOptOutProcessor'

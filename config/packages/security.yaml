@@ -14,6 +14,10 @@ security:
             security: false
             lazy: true
 
+        landing_page:
+            pattern: ^/landing-page/
+            security: false
+
         auth0_jwt_validate:
             pattern: ^/
             stateless: true
@@ -31,4 +35,5 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: "^/docs", roles: PUBLIC_ACCESS }
+        - { path: "^/landing-page/", roles: PUBLIC_ACCESS }
         - { path: "^/", roles: ROLE_USING_TOKEN } # <-- Make sure to change to ROLE_SERVICE_<YOUR_SERVICE_CODE>
