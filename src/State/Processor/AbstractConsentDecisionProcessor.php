@@ -9,9 +9,9 @@ use ApiPlatform\State\ProcessorInterface;
 use App\Dto\ConsentDecisionOutput;
 use App\Dto\ConsentDecisionRequest;
 use App\Entity\Customer;
+use App\Service\ConsentService;
 use DateTimeImmutable;
 use Symfony\Component\HttpFoundation\RequestStack;
-use App\Service\ConsentService;
 
 /**
  * @implements ProcessorInterface<ConsentDecisionRequest, ConsentDecisionOutput>
