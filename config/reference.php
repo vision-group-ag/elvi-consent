@@ -472,7 +472,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     },
  *     disallow_search_engine_index?: bool|Param, // Enabled by default when debug is enabled. // Default: true
  *     http_client?: bool|array{ // HTTP Client configuration
- *         enabled?: bool|Param, // Default: false
+ *         enabled?: bool|Param, // Default: true
  *         max_host_connections?: int|Param, // The maximum number of connections to a single host.
  *         default_options?: array{
  *             headers?: array<string, mixed>,
@@ -1681,7 +1681,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *             enabled?: bool|Param, // Default: true
  *         },
  *         http_client?: bool|array{
- *             enabled?: bool|Param, // Default: false
+ *             enabled?: bool|Param, // Default: true
  *         },
  *         console?: array{
  *             excluded_commands?: list<scalar|Param|null>,
@@ -1790,6 +1790,13 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         response_body_max_bytes?: scalar|Param|null, // Default: 65536
  *     },
  * }
+ * @psalm-type ElviApiClientConfig = array{
+ *     retry?: bool|Param, // Default: false
+ *     max_retries?: int|Param, // Default: 3
+ *     retry_sleep?: int|Param, // Default: 200
+ *     retry_status_codes_expr?: scalar|Param|null, // Default: ">= 500"
+ *     timeout?: int|Param, // Default: null
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1804,6 +1811,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     twig?: TwigConfig,
  *     auth0?: Auth0Config,
  *     api_log?: ApiLogConfig,
+ *     elvi_api_client?: ElviApiClientConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1818,6 +1826,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig?: TwigConfig,
  *         auth0?: Auth0Config,
  *         api_log?: ApiLogConfig,
+ *         elvi_api_client?: ElviApiClientConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1833,6 +1842,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig?: TwigConfig,
  *         auth0?: Auth0Config,
  *         api_log?: ApiLogConfig,
+ *         elvi_api_client?: ElviApiClientConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1848,6 +1858,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig?: TwigConfig,
  *         auth0?: Auth0Config,
  *         api_log?: ApiLogConfig,
+ *         elvi_api_client?: ElviApiClientConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,

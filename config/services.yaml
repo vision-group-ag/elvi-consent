@@ -38,3 +38,19 @@ services:
             $hub: '@Sentry\State\HubInterface'
             $level: !php/const Monolog\Logger::ERROR
             $bubble: false
+
+    customer.external_identifier_filter:
+      parent: 'api_platform.doctrine.orm.search_filter'
+      arguments: [ { externalIdentifier: 'exact'} ]
+      tags:  [ 'api_platform.filter' ]
+      autowire: false
+      autoconfigure: false
+      public: false
+
+    customer.decision_date_filter:
+      parent: 'api_platform.doctrine.orm.date_filter'
+      arguments: [{ decisionDate: ~ }]
+      tags: ['api_platform.filter']
+      autowire: false
+      autoconfigure: false
+      public: false

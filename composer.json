@@ -6,10 +6,11 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
-        "api-platform/symfony": "^4.0",
         "api-platform/doctrine-orm": "^4.0",
+        "api-platform/symfony": "^4.0",
         "doctrine/doctrine-bundle": "^3.0",
         "doctrine/doctrine-migrations-bundle": "^4.0",
+        "elvi/api-client-bundle": "*",
         "elvi/api-log-bundle": "^2.0",
         "elvi/auth-bundle": "^6.0",
         "elvi/health-check-bundle": "^1.0",
@@ -63,6 +64,10 @@
         {
             "type": "git",
             "url": "git@github.com:vision-group-ag/elvi-health-check-bundle.git"
+        },
+        {
+          "type": "git",
+          "url": "git@github.com:vision-group-ag/elvi-api-client-bundle.git"
         }
     ],
     "config": {

@@ -4,4 +4,8 @@ resources:
       pagination_items_per_page: 100
 
     operations:
-      ApiPlatform\Metadata\GetCollection: ~
+      ApiPlatform\Metadata\GetCollection:
+        filters:
+          - customer.external_identifier_filter
+          - customer.decision_date_filter
+

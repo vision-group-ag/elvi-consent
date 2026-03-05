@@ -13,4 +13,5 @@ return [
     Elvi\AuthBundle\ElviAuthBundle::class => ['all' => true],
     Elvi\ApiLogBundle\ElviApiLogBundle::class => ['all' => true],
     Elvi\HealthCheckBundle\ElviHealthCheckBundle::class => ['all' => true],
+    Elvi\ApiClientBundle\ElviApiClientBundle::class => ['all' => true],
 ];
