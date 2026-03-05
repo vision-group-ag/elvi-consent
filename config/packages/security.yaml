@@ -36,4 +36,4 @@ security:
     access_control:
         - { path: "^/docs", roles: PUBLIC_ACCESS }
         - { path: "^/landing-page/", roles: PUBLIC_ACCESS }
-        - { path: "^/", roles: ROLE_USING_TOKEN } # <-- Make sure to change to ROLE_SERVICE_<YOUR_SERVICE_CODE>
+        - { path: "^/", roles: ROLE_SERVICE_CONSENT } # <-- Make sure to change to ROLE_SERVICE_<YOUR_SERVICE_CODE>
