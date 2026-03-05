@@ -9,7 +9,7 @@ use AppTests\Codeception\Support\ApiTester;
 class ConsentLandingPageCest
 {
     private const SALES_CHANNEL = 'lensplaza_nl';
-    private const EXTERNAL_IDENTIFIER = 'test-customer-123';
+    private const EXTERNAL_IDENTIFIER = 'test-customer-123@test.com';
 
     public function optInCreatesCustomerAndReturnsOptedIn(ApiTester $I): void
     {

@@ -100,4 +100,15 @@ class ConsentService
 
         return $customer;
     }
+
+    public function showConsentModal(string $externalIdentifier, string $salesChannel): bool
+    {
+        $customer = $this->customerRepository->findByExternalIdentifierAndChannel($externalIdentifier, $salesChannel);
+
+        if ($customer === null) {
+            return true;
+        }
+
+        return !$customer->hasDecided();
+    }
 }

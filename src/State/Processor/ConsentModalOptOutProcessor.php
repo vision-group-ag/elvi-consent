@@ -8,7 +8,7 @@ use App\Entity\Customer;
 use App\Enum\ConsentSource;
 use DateTimeImmutable;
 
-readonly class ConsentOptOutProcessor extends AbstractConsentDecisionProcessor
+readonly class ConsentModalOptOutProcessor extends AbstractConsentDecisionProcessor
 {
     #[\Override]
     protected function record(
@@ -23,7 +23,7 @@ readonly class ConsentOptOutProcessor extends AbstractConsentDecisionProcessor
             externalIdentifier: $externalIdentifier,
             salesChannel: $salesChannel,
             rawData: $rawData,
-            source: ConsentSource::LandingPage,
+            source: ConsentSource::ShopModal,
             decidedAt: $decidedAt,
             ipAddress: $ipAddress,
             userAgent: $userAgent,
