@@ -1,0 +1,6 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    firewalls:
+        auth0_jwt_validate:
+            pattern: ^/
+            security: false

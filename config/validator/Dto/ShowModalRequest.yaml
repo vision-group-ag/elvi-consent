@@ -1,0 +1,7 @@
+App\Dto\ShowModalRequest:
+  properties:
+    externalIdentifier:
+      - NotBlank: ~
+      - Email: ~
+    salesChannel:
+      - NotBlank: ~

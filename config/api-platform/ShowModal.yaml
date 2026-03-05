@@ -1,0 +1,12 @@
+resources:
+  App\Dto\ShowModalOutput:
+    shortName: 'modal-should-show'
+    operations:
+      _api_show_modal:
+        method: 'POST'
+        uriTemplate: 'modal/should-show'
+        class: ApiPlatform\Metadata\Post
+        status: 200
+        input: App\Dto\ShowModalRequest
+        output: App\Dto\ShowModalOutput
+        processor: 'App\State\Processor\ShowModalProcessor'
