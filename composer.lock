@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a7c5a9e27849ecff980e960cef4dfaa",
+    "content-hash": "aaa76fa404dc56ffb72af5bbe9a4a176",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
@@ -2878,6 +2878,53 @@
             "time": "2025-12-18T08:11:09+00:00"
         },
         {
+            "name": "elvi/events-bundle",
+            "version": "v1.10.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:vision-group-ag/elvi-events-bundle.git",
+                "reference": "28ded0e695c6de2d4147efda97e27b2715be4116"
+            },
+            "require": {
+                "ext-amqp": "*",
+                "php": "^8.4",
+                "symfony/amqp-messenger": "^7.3 || ^8.0",
+                "symfony/console": "^7.3 || ^8.0",
+                "symfony/dotenv": "^7.3 || ^8.0",
+                "symfony/framework-bundle": "^7.3 || ^8.0",
+                "symfony/messenger": "^7.3 || ^8.0",
+                "symfony/yaml": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "amphp/amp": ">= 3.1.1",
+                "amphp/cache": "> 2.0.0",
+                "amphp/dns": ">= 2.1.2",
+                "amphp/parallel": ">= 2.3.3",
+                "amphp/parser": ">= 1.1.1",
+                "amphp/process": ">= 2.0.3",
+                "amphp/socket": ">= 2.3.1",
+                "daverandom/libdns": ">= 2.1.0",
+                "nikic/php-parser": ">= 5.6.1",
+                "revolt/event-loop": ">= 1.0.8",
+                "roave/security-advisories": "dev-latest",
+                "sebastian/diff": ">= 6.0.1",
+                "spatie/array-to-xml": ">= 3.3.0",
+                "symplify/easy-coding-standard": "^13.0",
+                "vimeo/psalm": "^6.14.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Elvi\\EventsBundle\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Elvi Events Bundle",
+            "time": "2026-03-06T08:00:23+00:00"
+        },
+        {
             "name": "elvi/health-check-bundle",
             "version": "v1.1.0",
             "source": {
@@ -5008,6 +5055,79 @@
                 }
             ],
             "time": "2026-02-23T12:32:36+00:00"
+        },
+        {
+            "name": "symfony/amqp-messenger",
+            "version": "v7.4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/amqp-messenger.git",
+                "reference": "769bcc3762feee03afaacd7d238207d7870f1533"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/amqp-messenger/zipball/769bcc3762feee03afaacd7d238207d7870f1533",
+                "reference": "769bcc3762feee03afaacd7d238207d7870f1533",
+                "shasum": ""
+            },
+            "require": {
+                "ext-amqp": "*",
+                "php": ">=8.2",
+                "symfony/messenger": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "symfony/event-dispatcher": "^6.4|^7.0|^8.0",
+                "symfony/process": "^6.4|^7.0|^8.0",
+                "symfony/property-access": "^6.4|^7.0|^8.0",
+                "symfony/serializer": "^6.4|^7.0|^8.0"
+            },
+            "type": "symfony-messenger-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Messenger\\Bridge\\Amqp\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony AMQP extension Messenger Bridge",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/amqp-messenger/tree/v7.4.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-02-25T16:50:00+00:00"
         },
         {
             "name": "symfony/asset",

@@ -159,6 +159,9 @@
     "elvi/auth-bundle": {
         "version": "v3.1"
     },
+    "elvi/events-bundle": {
+        "version": "v1.10.1"
+    },
     "elvi/health-check-bundle": {
         "version": "v0.2.2"
     },
