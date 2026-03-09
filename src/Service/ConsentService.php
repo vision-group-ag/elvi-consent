@@ -115,7 +115,7 @@ class ConsentService
             $customers = $this->customerRepository->findAllByExternalIdentifier($externalIdentifier);
 
             if ($customers !== []) {
-                return array_filter($customers, fn(Customer $customer) => !$customer->hasDecided()) !== [];
+                return array_filter($customers, fn (Customer $customer) => !$customer->hasDecided()) !== [];
             }
         }
 
