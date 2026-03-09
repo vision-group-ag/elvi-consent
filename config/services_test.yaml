@@ -1,0 +1,6 @@
+services:
+  App\Repository\Historical\CustomerEntityRepositoryInterface:
+    class: App\Repository\Historical\InMemoryCustomerEntityRepository
+    arguments:
+      $emails:
+        - 'test-customer-123@test.com'

@@ -23,4 +23,32 @@ class CustomerRepository extends ServiceEntityRepository
             'salesChannel' => $salesChannel,
         ]);
     }
+
+    public function findOneByExternalIdentifier(string $externalIdentifier): ?Customer
+    {
+        return $this->findOneBy([
+            'externalIdentifier' => $externalIdentifier,
+        ]);
+    }
+
+    public function findFromToDateRange(\DateTimeImmutable $from, \DateTimeImmutable $to): array
+    {
+        $qb = $this->createQueryBuilder('c');
+        $qb->where('c.decisionDate >= :from')
+            ->andWhere('c.decisionDate <= :to')
+            ->setParameter('from', $from)
+            ->setParameter('to', $to);
+
+        return $qb->getQuery()->getResult();
+    }
+
+    public function persist(Customer $customer): void
+    {
+        $this->getEntityManager()->persist($customer);
+    }
+
+    public function flush(): void
+    {
+        $this->getEntityManager()->flush();
+    }
 }

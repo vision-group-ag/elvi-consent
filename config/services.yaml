@@ -54,3 +54,7 @@ services:
       autowire: false
       autoconfigure: false
       public: false
+
+    App\Repository\Historical\CustomerEntityRepository:
+      arguments:
+        $historicalConnection: '@doctrine.dbal.historical_connection'

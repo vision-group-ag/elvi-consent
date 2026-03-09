@@ -8,15 +8,17 @@ use App\Entity\ConsentEvent;
 use App\Entity\Customer;
 use App\Enum\ConsentSource;
 use App\Enum\ConsentStatus;
+use App\Repository\ConsentEventRepository;
 use App\Repository\CustomerRepository;
+use App\Repository\Historical\CustomerEntityRepositoryInterface;
 use DateTimeImmutable;
-use Doctrine\ORM\EntityManagerInterface;
 
 class ConsentService
 {
     public function __construct(
         private readonly CustomerRepository $customerRepository,
-        private readonly EntityManagerInterface $entityManager,
+        private readonly ConsentEventRepository $consentEventRepository,
+        private readonly CustomerEntityRepositoryInterface $customerEntityRepository,
     ) {
     }
 
@@ -76,7 +78,7 @@ class ConsentService
 
         if ($customer === null) {
             $customer = new Customer($externalIdentifier, $salesChannel, $rawData);
-            $this->entityManager->persist($customer);
+            $this->customerRepository->persist($customer);
         }
 
         match ($decision) {
@@ -95,8 +97,8 @@ class ConsentService
             ipAddress: $ipAddress,
             userAgent: $userAgent,
         );
-        $this->entityManager->persist($consentEvent);
-        $this->entityManager->flush();
+        $this->consentEventRepository->persist($consentEvent);
+        $this->consentEventRepository->flush();
 
         return $customer;
     }
@@ -106,7 +108,11 @@ class ConsentService
         $customer = $this->customerRepository->findByExternalIdentifierAndChannel($externalIdentifier, $salesChannel);
 
         if ($customer === null) {
-            return true;
+            if ($this->customerEntityRepository->existsByEmail($externalIdentifier)) {
+                return true;
+            }
+
+            return false;
         }
 
         return !$customer->hasDecided();
