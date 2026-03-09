@@ -3,5 +3,3 @@ App\Dto\ShowModalRequest:
     externalIdentifier:
       - NotBlank: ~
       - Email: ~
-    salesChannel:
-      - NotBlank: ~

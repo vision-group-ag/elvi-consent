@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Repository;
 
 use App\Entity\Customer;
+use App\Enum\ConsentStatus;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -24,20 +25,23 @@ class CustomerRepository extends ServiceEntityRepository
         ]);
     }
 
-    public function findOneByExternalIdentifier(string $externalIdentifier): ?Customer
+    public function findOneByExternalIdentifier(string $externalIdentifier, ConsentStatus $consentStatus): ?Customer
     {
         return $this->findOneBy([
             'externalIdentifier' => $externalIdentifier,
+            'consentStatus' => $consentStatus->value,
         ]);
     }
 
-    public function findFromToDateRange(\DateTimeImmutable $from, \DateTimeImmutable $to): array
+    public function findFromToDateRange(\DateTimeImmutable $from, \DateTimeImmutable $to, ConsentStatus $consentStatus): array
     {
         $qb = $this->createQueryBuilder('c');
         $qb->where('c.decisionDate >= :from')
             ->andWhere('c.decisionDate <= :to')
+            ->andWhere('c.consentStatus = :decision')
             ->setParameter('from', $from)
-            ->setParameter('to', $to);
+            ->setParameter('to', $to)
+            ->setParameter('decision', $consentStatus->value);
 
         return $qb->getQuery()->getResult();
     }
@@ -50,5 +54,10 @@ class CustomerRepository extends ServiceEntityRepository
     public function flush(): void
     {
         $this->getEntityManager()->flush();
+    }
+
+    public function findAllByExternalIdentifier(string $externalIdentifier): array
+    {
+        return $this->findBy(['externalIdentifier' => $externalIdentifier]);
     }
 }

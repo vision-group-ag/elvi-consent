@@ -103,18 +103,22 @@ class ConsentService
         return $customer;
     }
 
-    public function showConsentModal(string $externalIdentifier, string $salesChannel): bool
+    public function showConsentModal(string $externalIdentifier, ?string $salesChannel): bool
     {
-        $customer = $this->customerRepository->findByExternalIdentifierAndChannel($externalIdentifier, $salesChannel);
+        if ($salesChannel !== null) {
+            $customer = $this->customerRepository->findByExternalIdentifierAndChannel($externalIdentifier, $salesChannel);
 
-        if ($customer === null) {
-            if ($this->customerEntityRepository->existsByEmail($externalIdentifier)) {
-                return true;
+            if ($customer !== null) {
+                return !$customer->hasDecided();
             }
+        } else {
+            $customers = $this->customerRepository->findAllByExternalIdentifier($externalIdentifier);
 
-            return false;
+            if ($customers !== []) {
+                return array_filter($customers, fn(Customer $customer) => !$customer->hasDecided()) !== [];
+            }
         }
 
-        return !$customer->hasDecided();
+        return $this->customerEntityRepository->existsByEmail($externalIdentifier);
     }
 }
