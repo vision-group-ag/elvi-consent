@@ -58,5 +58,5 @@ services:
     App\Repository\Historical\CustomerEntityRepositoryInterface:
 #      class: App\Repository\Historical\CustomerEntityRepository
       class: App\Repository\Historical\InMemoryCustomerEntityRepository
-      arguments:
-        $historicalConnection: '@doctrine.dbal.historical_connection'
+#      arguments:
+#        $historicalConnection: '@doctrine.dbal.historical_connection'
