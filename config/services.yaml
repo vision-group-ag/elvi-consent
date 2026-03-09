@@ -57,6 +57,10 @@ services:
 
     App\Repository\Historical\CustomerEntityRepositoryInterface:
 #      class: App\Repository\Historical\CustomerEntityRepository
-      class: App\Repository\Historical\InMemoryCustomerEntityRepository
 #      arguments:
 #        $historicalConnection: '@doctrine.dbal.historical_connection'
+      class: App\Repository\Historical\InMemoryCustomerEntityRepository
+      arguments:
+        $emails:
+          - 'test-customer-123@test.com'
+          - 'test-customer-001@test.com'
