@@ -13,6 +13,9 @@ class Customer
     private string $id;
     private DateTimeImmutable $createdAt;
 
+    private ?string $dataImportStatus = null;
+    private ?DateTimeImmutable $dataImportedAt = null;
+
     public function __construct(
         private string $externalIdentifier,
         private string $salesChannel,
@@ -74,5 +77,21 @@ class Customer
     public function hasDecided(): bool
     {
         return $this->consentStatus !== ConsentStatus::Pending;
+    }
+
+    public function getDataImportStatus(): ?string
+    {
+        return $this->dataImportStatus;
+    }
+
+    public function getDataImportedAt(): ?DateTimeImmutable
+    {
+        return $this->dataImportedAt;
+    }
+
+    public function recordDataImport(string $status, DateTimeImmutable $importedAt): void
+    {
+        $this->dataImportStatus = $status;
+        $this->dataImportedAt = $importedAt;
     }
 }

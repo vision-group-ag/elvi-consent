@@ -12,6 +12,8 @@
         <field name="rawData" type="json"/>
         <field name="consentStatus" length="20" enum-type="App\Enum\ConsentStatus"/>
         <field name="decisionDate" type="datetime_immutable" nullable="true"/>
+        <field name="dataImportStatus" nullable="true"/>
+        <field name="dataImportedAt" type="datetime_immutable" nullable="true"/>
         <field name="createdAt" type="datetime_immutable"/>
 
         <indexes>
