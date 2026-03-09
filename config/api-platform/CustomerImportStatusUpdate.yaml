@@ -1,0 +1,12 @@
+resources:
+  App\Dto\CustomerImportStatusUpdateRequest:
+    shortName: 'customer-import-status'
+    operations:
+      _api_customer_import_status_update:
+        method: 'POST'
+        uriTemplate: 'customers/import-status'
+        class: ApiPlatform\Metadata\Post
+        status: 200
+        input: App\Dto\CustomerImportStatusUpdateRequest
+        output: App\Dto\CustomerImportStatusUpdateOutput
+        processor: 'App\State\Processor\CustomerImportStatusProcessor'

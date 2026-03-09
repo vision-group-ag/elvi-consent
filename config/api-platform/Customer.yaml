@@ -8,4 +8,6 @@ resources:
         filters:
           - customer.external_identifier_filter
           - customer.decision_date_filter
+      ApiPlatform\Metadata\Get: ~
+
 

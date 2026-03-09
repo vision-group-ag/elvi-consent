@@ -25,7 +25,7 @@ class CustomerRepository extends ServiceEntityRepository
         ]);
     }
 
-    public function findOneByExternalIdentifier(string $externalIdentifier, ConsentStatus $consentStatus): ?Customer
+    public function findOneByExternalIdentifierAndStatus(string $externalIdentifier, ConsentStatus $consentStatus): ?Customer
     {
         return $this->findOneBy([
             'externalIdentifier' => $externalIdentifier,
@@ -59,5 +59,15 @@ class CustomerRepository extends ServiceEntityRepository
     public function findAllByExternalIdentifier(string $externalIdentifier): array
     {
         return $this->findBy(['externalIdentifier' => $externalIdentifier]);
+    }
+
+    public function findOneByExternalIdentifier(string $email): ?Customer
+    {
+        return $this->findOneBy(['externalIdentifier' => $email]);
+    }
+
+    public function findOneByExternalIdentifierAndSalesChannel(string $email, string $salesChannel): ?Customer
+    {
+        return $this->findOneBy(['externalIdentifier' => $email, 'salesChannel' => $salesChannel]);
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use App\Enum\ConsentStatus;
+use App\Enum\ImportStatus;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 
@@ -89,9 +90,9 @@ class Customer
         return $this->dataImportedAt;
     }
 
-    public function recordDataImport(string $status, DateTimeImmutable $importedAt): void
+    public function recordDataImport(ImportStatus $status, DateTimeImmutable $importedAt): void
     {
-        $this->dataImportStatus = $status;
+        $this->dataImportStatus = $status->value;
         $this->dataImportedAt = $importedAt;
     }
 }

@@ -56,7 +56,7 @@ class RequestCustomerDataImportCommand extends Command
 
         if ($externalIdentifier) {
             $output->writeln(sprintf('Filtering customers with external identifier: %s', $externalIdentifier));
-            $customer = $this->repository->findOneByExternalIdentifier($externalIdentifier, ConsentStatus::OptedIn);
+            $customer = $this->repository->findOneByExternalIdentifierAndStatus($externalIdentifier, ConsentStatus::OptedIn);
             $customers = $customer ? [$customer] : [];
         } elseif ($decidedAtFrom && $decidedAtTo) {
             $output->writeln('No external identifier provided. Processing all customers with filters - Decided At From: ' . $decidedAtFrom->format('Y-m-d') . ', Decided At To: ' . $decidedAtTo->format('Y-m-d'));
