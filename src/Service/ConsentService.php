@@ -12,6 +12,8 @@ use App\Repository\ConsentEventRepository;
 use App\Repository\CustomerRepository;
 use App\Repository\Historical\CustomerEntityRepositoryInterface;
 use DateTimeImmutable;
+use Elvi\EventsBundle\Event\ExternalDataImport\ExternalDataImportRequested;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 class ConsentService
 {
@@ -19,6 +21,8 @@ class ConsentService
         private readonly CustomerRepository $customerRepository,
         private readonly ConsentEventRepository $consentEventRepository,
         private readonly CustomerEntityRepositoryInterface $customerEntityRepository,
+        private readonly MessageBusInterface $eventBus,
+        private readonly bool $emitImportEvents,
     ) {
     }
 
@@ -99,6 +103,16 @@ class ConsentService
         );
         $this->consentEventRepository->persist($consentEvent);
         $this->consentEventRepository->flush();
+
+        if ($decision === ConsentStatus::OptedIn && $this->emitImportEvents) {
+            $this->eventBus->dispatch(new ExternalDataImportRequested(
+                entity: 'customer',
+                rule: 'all',
+                salesChannel: null,
+                customerEmail: $externalIdentifier,
+                requestedByContext: 'elvi-consent',
+            ));
+        }
 
         return $customer;
     }

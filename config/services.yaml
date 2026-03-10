@@ -55,6 +55,11 @@ services:
       autoconfigure: false
       public: false
 
+    App\Service\ConsentService:
+        arguments:
+            $emitImportEvents: '%env(bool:EMIT_IMPORT_EVENTS)%'
+            $eventBus: '@event.bus'
+
     App\Repository\Historical\CustomerEntityRepositoryInterface:
 #      class: App\Repository\Historical\CustomerEntityRepository
 #      arguments:
