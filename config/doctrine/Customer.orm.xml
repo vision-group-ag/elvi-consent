@@ -8,7 +8,8 @@
         </id>
 
         <field name="externalIdentifier"/>
-        <field name="salesChannel" length="20"/>
+        <field name="salesChannel" length="20" nullable="true"/>
+        <field name="brand" nullable="true"/>
         <field name="rawData" type="json"/>
         <field name="consentStatus" length="20" enum-type="App\Enum\ConsentStatus"/>
         <field name="decisionDate" type="datetime_immutable" nullable="true"/>

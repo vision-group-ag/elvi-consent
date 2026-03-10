@@ -19,8 +19,9 @@ class Customer
 
     public function __construct(
         private string $externalIdentifier,
-        private string $salesChannel,
+        private ?string $salesChannel,
         private array $rawData,
+        private ?string $brand = null,
         private ConsentStatus $consentStatus = ConsentStatus::Pending,
         private ?DateTimeImmutable $decisionDate = null,
     ) {
@@ -38,9 +39,14 @@ class Customer
         return $this->externalIdentifier;
     }
 
-    public function getSalesChannel(): string
+    public function getSalesChannel(): ?string
     {
         return $this->salesChannel;
+    }
+
+    public function getBrand(): ?string
+    {
+        return $this->brand;
     }
 
     public function getRawData(): array
