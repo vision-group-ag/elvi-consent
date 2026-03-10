@@ -187,4 +187,48 @@ class ConsentModalCest
         $I->seeResponseCodeIs(200);
         $I->assertFalse($I->grabResponseJsonData()['show_modal']);
     }
+
+    public function modalOptInCreatesCustomerAndReturnsOptedIn(ApiTester $I): void
+    {
+        $I->haveHttpHeader('Content-Type', 'application/json');
+        $I->haveHttpHeader('Accept', 'application/json');
+
+        $I->sendPost('/modal/' . self::SALES_CHANNEL . '/optin', [
+            'external_identifier' => self::UNKNOWN_EMAIL,
+        ]);
+
+        $I->seeResponseCodeIs(200);
+        $I->assertEquals('opted_in', $I->grabResponseJsonData()['consent_status']);
+    }
+
+    public function modalOptOutCreatesCustomerAndReturnsOptedOut(ApiTester $I): void
+    {
+        $I->haveHttpHeader('Content-Type', 'application/json');
+        $I->haveHttpHeader('Accept', 'application/json');
+
+        $I->sendPost('/modal/' . self::SALES_CHANNEL . '/optout', [
+            'external_identifier' => self::UNKNOWN_EMAIL,
+        ]);
+
+        $I->seeResponseCodeIs(200);
+        $I->assertEquals('opted_out', $I->grabResponseJsonData()['consent_status']);
+    }
+
+    public function modalOptInAfterOptOutReturnsOptedIn(ApiTester $I): void
+    {
+        $I->haveHttpHeader('Content-Type', 'application/json');
+        $I->haveHttpHeader('Accept', 'application/json');
+
+        $I->sendPost('/modal/' . self::SALES_CHANNEL . '/optout', [
+            'external_identifier' => self::UNKNOWN_EMAIL,
+        ]);
+        $I->seeResponseCodeIs(200);
+
+        $I->sendPost('/modal/' . self::SALES_CHANNEL . '/optin', [
+            'external_identifier' => self::UNKNOWN_EMAIL,
+        ]);
+
+        $I->seeResponseCodeIs(200);
+        $I->assertEquals('opted_in', $I->grabResponseJsonData()['consent_status']);
+    }
 }

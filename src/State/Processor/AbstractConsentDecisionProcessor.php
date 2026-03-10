@@ -26,8 +26,9 @@ abstract readonly class AbstractConsentDecisionProcessor implements ProcessorInt
 
     abstract protected function record(
         string $externalIdentifier,
-        string $salesChannel,
+        string $brand,
         array $rawData,
+        ?string $salesChannel,
         ?DateTimeImmutable $decidedAt,
         ?string $ipAddress,
         ?string $userAgent,
@@ -40,10 +41,13 @@ abstract readonly class AbstractConsentDecisionProcessor implements ProcessorInt
 
         $request = $this->requestStack->getCurrentRequest();
 
+        $brand = substr($uriVariables['salesChannel'], 0, -3);
+
         $customer = $this->record(
             externalIdentifier: $data->externalIdentifier,
-            salesChannel: $uriVariables['salesChannel'],
+            brand: $brand,
             rawData: $request->toArray(),
+            salesChannel: $data->salesChannel,
             decidedAt: $data->decidedAt,
             ipAddress: $request->getClientIp(),
             userAgent: $request->headers->get('User-Agent'),

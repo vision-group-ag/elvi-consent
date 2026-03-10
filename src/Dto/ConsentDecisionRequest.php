@@ -12,6 +12,7 @@ final class ConsentDecisionRequest
         public readonly string $externalIdentifier,
         public readonly ?DateTimeImmutable $decidedAt = null,
         public readonly ?string $consentVersion = null,
+        public readonly ?string $salesChannel = null,
     ) {
     }
 }

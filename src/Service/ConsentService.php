@@ -8,11 +8,11 @@ use App\Entity\ConsentEvent;
 use App\Entity\Customer;
 use App\Enum\ConsentSource;
 use App\Enum\ConsentStatus;
+use App\Factory\CustomerDataImportEventFactory;
 use App\Repository\ConsentEventRepository;
 use App\Repository\CustomerRepository;
 use App\Repository\Historical\CustomerEntityRepositoryInterface;
 use DateTimeImmutable;
-use Elvi\EventsBundle\Event\ExternalDataImport\ExternalDataImportRequested;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 class ConsentService
@@ -28,9 +28,10 @@ class ConsentService
 
     public function recordOptIn(
         string $externalIdentifier,
-        string $salesChannel,
+        ?string $salesChannel,
         array $rawData,
         ConsentSource $source,
+        ?string $brand = null,
         ?DateTimeImmutable $decidedAt = null,
         ?string $ipAddress = null,
         ?string $userAgent = null,
@@ -41,6 +42,7 @@ class ConsentService
             $salesChannel,
             $rawData,
             $source,
+            $brand,
             $decidedAt,
             $ipAddress,
             $userAgent,
@@ -49,9 +51,10 @@ class ConsentService
 
     public function recordOptOut(
         string $externalIdentifier,
-        string $salesChannel,
+        ?string $salesChannel,
         array $rawData,
         ConsentSource $source,
+        ?string $brand = null,
         ?DateTimeImmutable $decidedAt = null,
         ?string $ipAddress = null,
         ?string $userAgent = null,
@@ -62,6 +65,7 @@ class ConsentService
             $salesChannel,
             $rawData,
             $source,
+            $brand,
             $decidedAt,
             $ipAddress,
             $userAgent,
@@ -71,17 +75,20 @@ class ConsentService
     private function recordDecision(
         ConsentStatus $decision,
         string $externalIdentifier,
-        string $salesChannel,
+        ?string $salesChannel,
         array $rawData,
         ConsentSource $source,
+        ?string $brand,
         ?DateTimeImmutable $decidedAt,
         ?string $ipAddress,
         ?string $userAgent,
     ): Customer {
-        $customer = $this->customerRepository->findByExternalIdentifierAndChannel($externalIdentifier, $salesChannel);
+        $customer = $salesChannel !== null
+            ? $this->customerRepository->findByExternalIdentifierAndChannel($externalIdentifier, $salesChannel)
+            : $this->customerRepository->findOneByExternalIdentifier($externalIdentifier);
 
         if ($customer === null) {
-            $customer = new Customer($externalIdentifier, $salesChannel, $rawData);
+            $customer = new Customer($externalIdentifier, $salesChannel, $rawData, $brand);
             $this->customerRepository->persist($customer);
         }
 
@@ -105,13 +112,7 @@ class ConsentService
         $this->consentEventRepository->flush();
 
         if ($decision === ConsentStatus::OptedIn && $this->emitImportEvents) {
-            $this->eventBus->dispatch(new ExternalDataImportRequested(
-                entity: 'customer',
-                rule: 'all',
-                salesChannel: null,
-                customerEmail: $externalIdentifier,
-                requestedByContext: 'elvi-consent',
-            ));
+            $this->eventBus->dispatch(CustomerDataImportEventFactory::create($externalIdentifier));
         }
 
         return $customer;

@@ -13,8 +13,9 @@ readonly class ConsentOptOutProcessor extends AbstractConsentDecisionProcessor
     #[\Override]
     protected function record(
         string $externalIdentifier,
-        string $salesChannel,
+        string $brand,
         array $rawData,
+        ?string $salesChannel,
         ?DateTimeImmutable $decidedAt,
         ?string $ipAddress,
         ?string $userAgent,
@@ -24,6 +25,7 @@ readonly class ConsentOptOutProcessor extends AbstractConsentDecisionProcessor
             salesChannel: $salesChannel,
             rawData: $rawData,
             source: ConsentSource::LandingPage,
+            brand: $brand,
             decidedAt: $decidedAt,
             ipAddress: $ipAddress,
             userAgent: $userAgent,

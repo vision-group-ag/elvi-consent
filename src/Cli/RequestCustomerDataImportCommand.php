@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Cli;
 
 use App\Enum\ConsentStatus;
+use App\Factory\CustomerDataImportEventFactory;
 use App\Repository\CustomerRepository;
-use Elvi\EventsBundle\Event\ExternalDataImport\ExternalDataImportRequested;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
@@ -91,16 +91,7 @@ class RequestCustomerDataImportCommand extends Command
 
         $output->writeln('Dispatching import events...');
         foreach ($customers as $customer) {
-            $this->commandBus->dispatch(new ExternalDataImportRequested(
-                entity: 'customer',
-                rule: 'all',
-                salesChannel: null,
-                customerContext: null,
-                customerAccountId: null,
-                customerEmail: $customer->getExternalIdentifier(),
-                externalCustomerId: null,
-                requestedByContext: 'elvi-consent',
-            ));
+            $this->commandBus->dispatch(CustomerDataImportEventFactory::create($customer->getExternalIdentifier()));
         }
         $output->writeln('Done.');
 
