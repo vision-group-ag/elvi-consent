@@ -68,4 +68,8 @@ services:
       arguments:
         $emails:
           - 'test-customer-123@test.com'
+          - 'test-customer-005@test.com'
+          - 'test-customer-004@test.com'
+          - 'test-customer-003@test.com'
+          - 'test-customer-002@test.com'
           - 'test-customer-001@test.com'
