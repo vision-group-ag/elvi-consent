@@ -61,15 +61,6 @@ services:
             $eventBus: '@event.bus'
 
     App\Repository\Historical\CustomerEntityRepositoryInterface:
-#      class: App\Repository\Historical\CustomerEntityRepository
-#      arguments:
-#        $historicalConnection: '@doctrine.dbal.historical_connection'
-      class: App\Repository\Historical\InMemoryCustomerEntityRepository
+      class: App\Repository\Historical\CustomerEntityRepository
       arguments:
-        $emails:
-          - 'test-customer-123@test.com'
-          - 'test-customer-005@test.com'
-          - 'test-customer-004@test.com'
-          - 'test-customer-003@test.com'
-          - 'test-customer-002@test.com'
-          - 'test-customer-001@test.com'
+        $historicalConnection: '@doctrine.dbal.historical_connection'
